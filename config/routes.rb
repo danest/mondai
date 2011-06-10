@@ -1,4 +1,6 @@
 Mondai::Application.routes.draw do
+  get "home/index"
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }
 
   get "users/new"
@@ -52,7 +54,7 @@ Mondai::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "users#new"
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 

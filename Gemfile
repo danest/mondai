@@ -12,6 +12,7 @@ gem "rake", "0.8.7"
 gem 'devise'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "omniauth"
+gem 'css3buttons'
 # Deploy with Capistrano
 # gem 'capistrano'
 gem 'jquery-rails', '>= 0.2.7'
