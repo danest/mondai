@@ -10,9 +10,18 @@
 <body>
   <div class="container">
     <header>
-    <%=  link_to "Sign in", new_user_session_path %>
-    <%=  link_to "Sign out", destroy_user_session_path %>
-    <%=  link_to "Sign up", new_user_registration_path %>    
+		<% if user_signed_in? %>
+		  <li>
+		  <%= link_to('Logout', destroy_user_session_path) %>        
+		  </li>
+		<% else %>
+		  <li>
+		  <%= link_to('Login', new_user_session_path)  %>  or:
+		  </li>
+		  <li>
+			<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+		  </li>
+		<% end %>
     </header>
     <% if notice || alert %>
       <p class="notice"><%= notice %></p>

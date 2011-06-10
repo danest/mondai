@@ -1,9 +1,21 @@
 <h1> Welcome Sign up</h1>
-<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 <%= form_for("user", :url => user_registration_path) do |f| %>
   <label>Email: </label><%= f.text_field :email %><br />
   <label>Password:</label> <%= f.password_field :password %><br />
   <label>Password Confirmation: </label><%= f.password_field :password_confirmation %><br />
   <%= f.submit 'Sign up' %>
 <% end %>
-
+<% if current_user %>
+	<li>
+		<%= current_user.name %>
+	</li>
+	<li>
+		<%= current_user.email %>
+	</li>
+	<li>
+		<%= current_user.uid %>
+	</li>
+	<li>
+		<%= image_tag current_user.picture %>
+	</li>
+<% end %>
