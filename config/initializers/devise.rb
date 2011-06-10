@@ -3,7 +3,10 @@
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = "please-change-me@config-initializers-devise.com"
+  config.mailer_sender = "sowdanest@gmail.com"
+  # config.omniauth :facebook, "207998685896226", "94482b355508fd15cd1b9f8dc37169e2"
+  config.omniauth :facebook, "207998685896226", "94482b355508fd15cd1b9f8dc37169e2",
+      {:scope => 'email, offline_access' }
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"

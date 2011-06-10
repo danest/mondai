@@ -10,8 +10,11 @@ gem "rake", "0.8.7"
 # Use unicorn as the web server
 # gem 'unicorn'
 gem 'devise'
+gem "oa-oauth", :require => "omniauth/oauth"
+gem "omniauth"
 # Deploy with Capistrano
 # gem 'capistrano'
+gem 'jquery-rails', '>= 0.2.7'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
@@ -26,6 +29,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+group :development, :test do
+   gem 'annotate-models'
+   gem 'annotate'
+end
