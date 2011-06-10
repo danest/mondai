@@ -7,6 +7,7 @@ class UserTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: users
@@ -24,5 +25,8 @@ end
 #  created_at           :datetime
 #  updated_at           :datetime
 #  name                 :string(255)
+#  uid                  :string(255)
+#  picture              :string(255)
+#  fb_link              :string(255)
 #
 
