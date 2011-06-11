@@ -4,8 +4,7 @@
 	    window.close()
 	  }
 </script>
-<h1>Mondai.me</h1>
-
+<div id="centerContainer">
 <div id="signin">
 	<div class="regular signinsubmit">
 	<h3>Sign In</h3>
@@ -22,7 +21,8 @@
 		<%= f.check_box :remember_me %> 
 	   </div>
 
-	  <p><%= positive_button_submit_tag "Sign in" %></p>
+	  <p><%= positive_button_submit_tag "Sign in" %>
+		<%= primary_button_link_to "Sign In With Facebook", user_omniauth_authorize_path(:facebook), :class => "popupp", :"data-width" => 600, :"data-height" => 400 %></p>
 	<% end %>
 	</div>
 </div>
@@ -37,4 +37,5 @@
 		  <div class="clear"></div>
 		<% end %>
 	</div>
+</div>
 </div>
