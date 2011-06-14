@@ -11,7 +11,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.timestamps
     end
     add_index :answers, :user_id
-    add_index :to_question, :questions_id
+    add_index :answers, :question_id
   end
 
   def self.down

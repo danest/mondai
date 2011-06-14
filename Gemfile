@@ -13,6 +13,8 @@ gem 'devise'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "omniauth"
 gem 'css3buttons'
+# facebook graph api
+gem "koala"
 # Deploy with Capistrano
 # gem 'capistrano'
 gem 'jquery-rails', '>= 0.2.7'

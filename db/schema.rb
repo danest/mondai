@@ -10,7 +10,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110610155702) do
+ActiveRecord::Schema.define(:version => 20110712100037) do
+
+  create_table "answers", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.integer  "vote_up"
+    t.integer  "vote_down"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
+  add_index "answers", ["user_id"], :name => "index_answers_on_user_id"
+
+  create_table "questions", :force => true do |t|
+    t.string   "content"
+    t.string   "description"
+    t.integer  "user_id"
+    t.boolean  "has_answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "questions", ["user_id"], :name => "index_questions_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

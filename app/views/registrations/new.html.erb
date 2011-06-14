@@ -1,14 +1,12 @@
-<script type="text/javascript">
-$(document).ready(function() {
-    // put all your jQuery goodness in here.
 
-});
-</script>
 <h2>Sign up</h2>
-<% if  session["devise.facebook_data"] 
+<% 	if  session["devise.facebook_data"]
 	user_name = session["devise.facebook_data"]['user_info']['first_name'] + " " + session["devise.facebook_data"]['user_info']['last_name']
 	user_email = session["devise.facebook_data"]['user_info']['email']
 	picture_url = session["devise.facebook_data"]['user_info']['image']
+	@token = session["devise.facebook_data"]['credentials']['token']
+	@graph = Koala::Facebook::GraphAPI.new(session["devise.facebook_data"]['credentials']['token'])
+	@friends = @graph.get_connections("me", "friends")
 else
 	user_name = ""
 	user_email = ""
@@ -27,6 +25,19 @@ end
 </div>
 </div>
 <div id="image">
-	<%= image_tag picture_url unless picture_url == nil %>
+	<%= image_tag picture_url, :class => "profile_picture" unless picture_url == nil %>
+	<p class="friendname"><%= user_name %></p>
+</div>
+<div id="friends">
+	<h4>Friends</h4>
+	<% @friends.each do |friend| %>
+		<% profile_picture = "http://graph.facebook.com/"+friend['id']+"/picture?type=square" %>
+		<% user = User.find_by_uid(friend['id']) %>
+		<% if user %>
+			<div class= "friends">
+			<%= image_tag profile_picture %>
+			</div>
+		<% end %>
+	<% end %>
 </div>
 <%# render :partial => "devise/shared/links" %>

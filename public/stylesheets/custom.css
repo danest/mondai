@@ -4,6 +4,7 @@
 }
 #topbar{
 	height:40px;
+	padding:10px;
 	background-color:#1175AE;
 }
 div.regular label{
@@ -20,6 +21,7 @@ div.regular form{
 	display:block;
 	position:relative;
 	width:375px;
+	padding:2px;
 }
 .singleField{
 	position:relative;
@@ -61,4 +63,29 @@ h1 a.home:link, h1 a.home:visited{
 }
 h1 a.home:hover{
 	text-decoration:underline;
+}
+#centerContainer{
+	margin-top:10px;
+}
+#friends{
+	clear:both;
+	width:150px;
+	
+}
+.friends{
+	float:left;
+	padding:3px;
+	width:50px;
+}
+.friendname{
+	font-size:.9em;
+}
+#image{
+	float:left;
+	width:80px;
+	height: 70px;
+}
+.profile_picture{
+	display:block;
+	text-align:center;
 }

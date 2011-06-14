@@ -50,6 +50,10 @@ GEM
     jquery-rails (0.2.7)
       rails (~> 3.0)
       thor (~> 0.14.4)
+    json (1.5.1)
+    koala (1.0.0)
+      json (~> 1.0)
+      multipart-post (~> 1.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -148,6 +152,7 @@ DEPENDENCIES
   css3buttons
   devise
   jquery-rails (>= 0.2.7)
+  koala
   oa-oauth
   omniauth
   rails (= 3.0.7)
