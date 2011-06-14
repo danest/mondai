@@ -7,7 +7,7 @@
 <div id="centerContainer">
 <div id="signin">
 	<div class="regular signinsubmit">
-	<h3>Sign In</h3>
+	<h3>Log In</h3>
 	<%= form_for("user", :url => user_session_path) do |f| %>
 	  <div class="singleField">
 		<%= f.label :email %>
@@ -21,7 +21,7 @@
 		<%= f.check_box :remember_me %> 
 	   </div>
 
-	  <p><%= positive_button_submit_tag "Sign in" %>
+	  <p><%= positive_button_submit_tag "Sign in" %> <span id="or"> or</span>
 		<%= primary_button_link_to "Sign In With Facebook", user_omniauth_authorize_path(:facebook), :class => "popupp", :"data-width" => 600, :"data-height" => 400 %></p>
 	<% end %>
 	</div>
