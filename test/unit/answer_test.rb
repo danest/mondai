@@ -6,3 +6,18 @@ class AnswerTest < ActiveSupport::TestCase
     assert true
   end
 end
+
+# == Schema Information
+#
+# Table name: answers
+#
+#  id          :integer         not null, primary key
+#  content     :string(255)
+#  user_id     :integer
+#  question_id :integer
+#  vote_up     :integer
+#  vote_down   :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
