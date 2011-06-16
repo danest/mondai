@@ -5,6 +5,11 @@ class Question < ActiveRecord::Base
   validates :content, :presence => true
   default_scope :order => 'questions.created_at DESC'
   
+  def to_param
+    normalized_name = content.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '')
+    "#{self.id}-#{normalized_name}"
+  end
+  
 end
 
 # == Schema Information
