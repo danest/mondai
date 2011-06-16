@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
                     #:format => { :with => :email_regex },
                     :uniqueness => { :case_sensitive => false }
   
-  has_many :question, :dependent => :destroy
-  has_many :answer, :dependent => :destroy
+  has_many :questions, :dependent => :destroy
+  has_many :answers, :dependent => :destroy
   
 end
 

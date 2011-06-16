@@ -1,5 +1,7 @@
 Mondai::Application.routes.draw do
   get "home/index"
+  get "home/show"
+  resources :questions
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }
 

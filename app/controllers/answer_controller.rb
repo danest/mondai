@@ -1,7 +1,6 @@
 class AnswersController < ApplicationController
-  before_filter :authenticate, :only => [:create, :destroy] 
-  before_filter :authorized_user, :only => :destroy 
-  
+  #before_filter :authenticate, :only => [:create, :destroy] 
+  #before_filter :authorized_user, :only => :destroy 
   # Need to discuss before us to implement these 2 funcs 
   def create
   

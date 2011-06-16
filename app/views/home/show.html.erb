@@ -1,0 +1,11 @@
+<h1>These are your questions <%= current_user.name %></h1>
+
+<% @user_questions.each do |questions| %>
+	<p>
+		<%= questions.content %>
+	</p>
+	<p>
+		<%= questions.description %>
+	</p>
+	
+<% end %>

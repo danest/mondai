@@ -2,7 +2,7 @@ class Question < ActiveRecord::Base
   attr_accessible :content, :description
   belongs_to :user
   has_many :answers, :dependent => :destroy
-  #validates :content, :presense => true, :length => {:maximum => 200}
+  validates :content, :presence => true
   default_scope :order => 'questions.created_at DESC'
   
 end
