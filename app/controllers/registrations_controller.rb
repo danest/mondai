@@ -18,7 +18,7 @@ class RegistrationsController < Devise::RegistrationsController
     @user = User.new(:name => params[:user][:name], :email => params[:user][:email], :password => params[:user][:password], 
                 :uid => facebook_uid, :picture => facebook_picture, :fb_link => facebook_url)
     if @user.save
-      redirect_to root_path
+      redirect_to home_show_path
     else
       render 'new'
     end

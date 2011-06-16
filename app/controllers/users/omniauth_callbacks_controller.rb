@@ -5,7 +5,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if user = User.find_by_uid(env["omniauth.auth"]['uid'])
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
       sign_in user, :event => :authentication
-      redirect_to root_path
+      redirect_to home_show_path
     else
       session["devise.facebook_data"] = env["omniauth.auth"]
       flash[:notice] = "Please Pick a password"
