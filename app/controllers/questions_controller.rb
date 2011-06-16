@@ -7,17 +7,44 @@ class QuestionsController < ApplicationController
   def new
     @question = Question.new
   end
+  
   def create
     @question = current_user.questions.create(params[:question])
     if @question.save
-      redirect_to root_path
+      redirect_to home_show_path
     else
       render 'new'
     end
   end
   
+  def edit
+    @question = Question.find(params[:id])
+  end
+  
+  def update
+    @question = Question.find(params[:id])
+
+    respond_to do |format|
+      if @question.update_attributes(params[:question])
+        format.html { redirect_to(@question,
+                      :notice => 'Question was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @question.errors,
+                      :status => :unprocessable_entity }
+      end
+    end
+  end
+  
   def destroy
-    
+    @question = Question.find(params[:id])
+    @question.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(home_show_path) }
+      format.xml  { head :ok }
+    end
   end
   
   def show
