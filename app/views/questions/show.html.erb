@@ -1,0 +1,19 @@
+
+<p>
+  <b>Question:</b>
+  <%= @question.content %>
+</p>
+ 
+<p>
+  <b>Description:</b>
+  <%= @question.description %>
+</p>
+ 
+<p>
+  <b>Comments:</b>
+  To be implemented
+</p>
+ 
+ 
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', question_path %>

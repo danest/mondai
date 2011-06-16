@@ -3,6 +3,7 @@
 <% @user_questions.each do |questions| %>
 	<p>
 		<%= questions.content %>
+		<%= link_to questions.content, questions %>
 	</p>
 	<p>
 		<%= questions.description %>
