@@ -4,10 +4,10 @@ class Question < ActiveRecord::Base
   has_many :answers, :dependent => :destroy
   validates :content, :presence => true
   default_scope :order => 'questions.created_at DESC'
+  #normalized_name = self.content.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '')
   
-  def to_param
-    normalized_name = content.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '')
-    "#{self.id}-#{normalized_name}"
+  def normalized_name
+    self.content.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '')
   end
   
 end
