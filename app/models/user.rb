@@ -67,9 +67,11 @@ class User < ActiveRecord::Base
                                           
  
   # Need to add followed topic, followed user, followed questions question and own question
-  def feed
+  def feed_user
     # followed user
     Question.from_users_followed_by(self)
+  end
+  def feed_question
     # followed question
     Question.from_questions_followed_by(self)
   end
