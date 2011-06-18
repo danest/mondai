@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   #before_filter :authorized_user, :only => :destroy 
   
   # Need to discuss before us to implement these 2 funcs 
-   before_filter :authenticate_user!, :only => :new 
+  before_filter :authenticate_user!, :only => :new 
   def new
     @question = Question.new
   end

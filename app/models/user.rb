@@ -20,6 +20,60 @@ class User < ActiveRecord::Base
   has_many :questions, :dependent => :destroy
   has_many :answers, :dependent => :destroy
   
+  # User Relationship model
+  has_many :user_relationship, :foreign_key => "u_follower_id", 
+                               :dependent => :destroy
+  has_many :user_following, :through => :u_relationship, :source => :user_followed
+  
+  has_many :user_reverse_relationship, :foreign_key => "u_followed_id",
+                                       :class_name => "UserRelationship",
+                                       :dependent => :destroy
+  has_many :user_followers, :through => :user_reverse_relationship
+  
+  # Method helper for User Relationship model
+  def user_following?(user_followed)
+    user_relationship.find_by_user_followed_id(user_followed)
+  end
+  
+  def follow_user!(user_followed)
+    user_relationship.create!(:u_followed_id => user_followed.id)
+  end
+  
+  def unfollow_user!(user_followed)
+    user_relationship.find_by_user_followed_id(user_followed).destroy
+  end
+  
+  # Question Relationship model
+  has_many :question_relationship, :foreign_key => "q_follower_id",
+                                   :dependent => :destroy
+  has_many :question_following, :through => :q_relationship, :source => :question_followed
+  has_many :question_reverse_relationship, :foreign_key => "q_followed_id",
+                                           :class_name => "QuestionRelationship",
+                                           :dependent => :destroy
+  has_many :question_followers, :through => :question_reverse_relationship
+  
+  # Method helper for Question Relationship model
+  def question_following?(question_followed)
+    question_relationship.find_by_question_followed_id(question_followed)
+  end
+  
+  def follow_question!(question_followed)
+    question_relationship.create!(:question_followed_id => question_followed.id)
+  end
+  
+  def unfollow_question!(question_followed)
+    question_relationship.find_by_question_followed_id(question_followed).destroy
+  end
+                                          
+ 
+  # Need to add followed topic, followed user, followed questions question and own question
+  def feed
+    # followed user
+    Question.from_users_followed_by(self)
+    # followed question
+    Question.from_questions_followed_by(self)
+  end
+  
 end
 
 

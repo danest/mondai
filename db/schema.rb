@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110712100037) do
+ActiveRecord::Schema.define(:version => 20110717064037) do
 
   create_table "answers", :force => true do |t|
     t.string   "content"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(:version => 20110712100037) do
   add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
   add_index "answers", ["user_id"], :name => "index_answers_on_user_id"
 
+  create_table "q_relationships", :force => true do |t|
+    t.integer  "q_follower_id"
+    t.integer  "q_followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "q_relationships", ["q_followed_id"], :name => "index_q_relationships_on_q_followed_id"
+  add_index "q_relationships", ["q_follower_id"], :name => "index_q_relationships_on_q_follower_id"
+
   create_table "questions", :force => true do |t|
     t.string   "content"
     t.string   "description"
@@ -35,6 +45,17 @@ ActiveRecord::Schema.define(:version => 20110712100037) do
   end
 
   add_index "questions", ["user_id"], :name => "index_questions_on_user_id"
+
+  create_table "u_relationships", :force => true do |t|
+    t.integer  "u_follower_id"
+    t.integer  "u_followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "u_relationships", ["u_followed_id"], :name => "index_u_relationships_on_u_followed_id"
+  add_index "u_relationships", ["u_follower_id", "u_followed_id"], :name => "index_u_relationships_on_u_follower_id_and_u_followed_id", :unique => true
+  add_index "u_relationships", ["u_follower_id"], :name => "index_u_relationships_on_u_follower_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
