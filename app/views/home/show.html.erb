@@ -21,5 +21,8 @@
 <% @topics.each do |topic| %>
 	<p>
 		<%= topic.name %>
+		<% topic.questions.each do | name| %>
+		<%= link_to name.content, show_post_path(name, :name => name.normalized_name) %>
+		<% end %>
 	</p>
 <% end %>
