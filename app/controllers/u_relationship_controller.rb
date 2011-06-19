@@ -1,5 +1,5 @@
 class URelationshipController < ApplicationController
-  before_filter :authenticate
+  before_filter :authenticate_user!
   respond_to :html, :js
   
   def create

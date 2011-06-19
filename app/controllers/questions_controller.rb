@@ -10,7 +10,9 @@ class QuestionsController < ApplicationController
   
   def create
     @question = current_user.questions.create(params[:question])
+    #@question.topics.build(params[:topics])
     if @question.save
+      #@question.topics.build(params[:topics])
       redirect_to home_show_path
     else
       render 'new'

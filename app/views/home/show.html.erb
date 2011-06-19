@@ -2,12 +2,18 @@
 
 <% @user_questions.each do |questions| %>
 	<p>
-		<%= questions.content %>
-		<%= link_to questions.content, questions %>
 		<%= link_to questions.content , show_post_path(questions, :name => questions.normalized_name) %>
 	</p>
 	<p>
 		<%= questions.description %>
+	</p>
+	<p>
+		Topics:
+		<% for topic in questions.topics %>
+		<li>
+			<%= h topic.name %>
+		</li>
+		<% end %>
 	</p>
 	
 <% end %>

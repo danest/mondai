@@ -1,4 +1,4 @@
-<%= form_for(@question) do |f| %>
+<%= nested_form_for(@question) do |f| %>
 
 <% if @question.errors.any? %>
   <div id="errorExplanation">
@@ -11,10 +11,11 @@
   </div>
   <% end %>
 	<%= f.label :question %><br />
-	<%= f.text_field :content%><br />
+	<%= f.text_field :content %><br />
 	
 	<%= f.label :description %><br />
 	<%= f.text_field :description %><br />
-	
+	<%= f.label :topic_names %><br />
+	<%= f.text_field :topic_names %>
 	<%= f.submit %><br />
 <% end %>

@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 20110717064039
+#
+# Table name: enrollments
+#
+#  id          :integer         not null, primary key
+#  question_id :integer
+#  topic_id    :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  questions_id: 1
+  topic_id: 1
+
+two:
+  questions_id: 1
+  topic_id: 1

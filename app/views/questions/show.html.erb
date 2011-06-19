@@ -12,6 +12,14 @@
   <b>Comments:</b>
   To be implemented
 </p>
+
+<p>
+	<% for topics in @question.topics %>
+	<li>
+		<%=h topics.name %>
+	</li>
+	<% end %>
+</p>
  
  
 <%= link_to 'Edit', edit_question_path(@question) %> |
