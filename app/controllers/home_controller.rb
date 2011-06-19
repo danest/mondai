@@ -7,5 +7,6 @@ class HomeController < ApplicationController
 
   def show  
     @user_questions = current_user.questions
+    @topics = Topic.all
   end
 end

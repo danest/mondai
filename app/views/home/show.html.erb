@@ -14,6 +14,12 @@
 			<%= h topic.name %>
 		</li>
 		<% end %>
+		
 	</p>
-	
+<% end %>
+<h1>All Topics</h1>
+<% @topics.each do |topic| %>
+	<p>
+		<%= topic.name %>
+	</p>
 <% end %>

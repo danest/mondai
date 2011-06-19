@@ -17,6 +17,8 @@ class Question < ActiveRecord::Base
   #belongs_to :topic, :autosave => true
   #accepts_nested_attributes_for :topics
   validates :content, :presence => true
+  
+  #generates a method topic_names= that sets the value of the instance variable @topic_names
   attr_writer :topic_names
   after_save :assign_topics
   default_scope :order => 'questions.created_at DESC'
