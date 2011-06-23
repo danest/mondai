@@ -11,8 +11,11 @@
 #
 
 class URelationship < ActiveRecord::Base
-  attr_accessible :user_followed_id
+  attr_accessible :u_followed_id
 
   belongs_to :user_follower, :class_name => "User"
   belongs_to :user_followed, :class_name => "User"
+  
+  validates :u_followed_id, :presence => true
+  validates :u_follower_id, :presence => true
 end
