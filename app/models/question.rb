@@ -10,6 +10,7 @@ class Question < ActiveRecord::Base
   end
   
   attr_accessible :content, :description, :name, :topic_names
+  attr_accessor :topic_names
   belongs_to :user
   has_many :enrollments
   has_many :topics, :through => :enrollments
@@ -19,7 +20,7 @@ class Question < ActiveRecord::Base
   validates :content, :presence => true
   
   #generates a method topic_names= that sets the value of the instance variable @topic_names
-  attr_writer :topic_names
+  #attr_writer :topic_names
   after_save :assign_topics
   default_scope :order => 'questions.created_at DESC'
   
@@ -28,12 +29,14 @@ class Question < ActiveRecord::Base
   end
   
   def topic_names
+    #this allows to see the topics when we click edit
     @topic_names || topics.map(&:name).join(' ')
   end
   
   
   def assign_topics
     if @topic_names
+      #assign the correct associations in our model
       self.topics = @topic_names.split(/\s+/).map do |name|
         Topic.find_or_create_by_name(name)
       end

@@ -2,7 +2,6 @@
 <%= form_for("user", :url => user_registration_path) do |f| %>
   <label>Email: </label><%= f.text_field :email %><br />
   <label>Password:</label> <%= f.password_field :password %><br />
-  <label>Password Confirmation: </label><%= f.password_field :password_confirmation %><br />
   <%= f.submit 'Sign up' %>
 <% end %>
 <% if current_user %>

@@ -9,9 +9,9 @@ class AnswersController < ApplicationController
   end
   
   
-def create
+  def create
     @answer = current_user.answer.create(params[:answer])
-    if @question.save
+    if @answer.save
       redirect_to home_show_path
     else
       render 'new'
