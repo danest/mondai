@@ -1,0 +1,44 @@
+<script type="text/javascript" charset="utf-8">
+	if(window.opener) {
+	    window.opener.location.reload(true);
+	    window.close()
+	  }
+</script>
+<div id="centerContainer">
+<div id="signin">
+	<div class="regular signinsubmit">
+	<h3>Log In</h3>
+	<%= form_for("user", :url => user_session_path) do |f| %>
+	  <div class="singleField">
+		<%= f.label :email %>
+	    <%= f.email_field :email %></div>
+	  <div class="singleField">
+		<%= f.label :password %>
+	  	<%= f.password_field :password %>
+	  </div>
+	   <div class="singleField">
+		<%= f.label :remember_me %>
+		<%= f.check_box :remember_me %> 
+	   </div>
+
+	  <p><%= positive_button_submit_tag "Sign in" %> <span id="or"> or</span>
+		<%= primary_button_link_to "Sign In With Facebook", user_omniauth_authorize_path(:facebook), :class => "popupp", :"data-width" => 600, :"data-height" => 400 %></p>
+	<% end %>
+	</div>
+</div>
+<div id="signup">
+	<%= big_primary_button_link_to "Sign Up With Facebook", user_omniauth_authorize_path(:facebook), :class => "popupp", :"data-width" => 600, :"data-height" => 400 %>
+	<div class="regular hsubmit">
+		<%= form_for("user", :url => user_registration_path) do |f| %>
+		  <div class="singleField"><label>Name</label><%= f.text_field :name %></div>
+		  <div class="singleField"><label>Email</label><%= f.text_field :email %></div>
+		  <div class="singleField"><label>Password</label> <%= f.password_field :password %></div>
+		  <div class="singleField submit"><%= big_primary_button_submit_tag 'Sign up' %></div>
+		  <div class="clear"></div>
+		<% end %>
+	</div>
+</div>
+</div>
+
+<%= link_to "New Question" , new_question_path %>
+<%= link_to "View Your Questions", home_show_path %>
