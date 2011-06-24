@@ -13,4 +13,5 @@ class URelationshipController < ApplicationController
     current_user.unfollow_user!(@user)
     respond_with @user
   end
+  
 end
