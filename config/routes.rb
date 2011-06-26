@@ -7,7 +7,7 @@ Mondai::Application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }
   match '/:name' => 'users#show', :as => "show_user"
-  match 'questions/:id/:name' => 'questions#show', :as => "show_question"
+  match '/:name/:id' => 'questions#show', :as => "show_question"
   get 'users/new'
   get 'users/show'
 

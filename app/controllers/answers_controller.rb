@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
     @answer = @question.answers.new(params[:answer])
     @answer.user = current_user
     if @answer.save
-      redirect_to show_question_path(@answer.question, @answer.question.normalized_name)
+      redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
     else
       render 'new'
     end
