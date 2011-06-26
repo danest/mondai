@@ -34,6 +34,12 @@ class Question < ActiveRecord::Base
     end
   end
   
+  def self.search(search)
+    if !search.empty?
+      where('content LIKE ?', "%#{search}%")
+    end
+  end
+  
   #Return Question that is belongs to the followed user to show in the current user profile page
   scope :from_users_followed_by, lambda { |user| user_followed_by(user) }
   scope :from_questions_followed_by, lambda { |question| question_followed_by(user) }

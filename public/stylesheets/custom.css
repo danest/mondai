@@ -458,6 +458,23 @@ input[type="text"].searchBox{
 b{
 	font-weight:bold;
 }
+
+div#five_center{
+	padding: 5px;
+	width: 560px;
+	margin: 0 auto;
+}
+label{
+	font-size:1.4em;
+}
+#five_center input[type="text"]{
+	font-size:1.4em;
+	padding:4px;
+}
+
+#five_center textarea{
+	padding:4px;
+}
 /**
  * Non-semantic helper classes: please define your styles before this section.
  */

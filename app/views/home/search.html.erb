@@ -1,0 +1,11 @@
+<% if @questions.blank? %>
+	<p>
+		Sorry nothing found yet. We are working on improving search
+	</p>
+	<% else %>
+		<% @questions.each do |question| %>
+			<li>
+				<%= question.content %>	
+			</li>
+		<% end %>
+<% end %>

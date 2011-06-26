@@ -15,10 +15,12 @@
 		<% if current_user %>
 			<ul id="topnav">
 				<li>
-					<form action="search" method="get" accept-charset="utf-8">
-						<input class= "searchBox" type="text" name="search" placeholder="Search for a Question" />
-						<input class="search" type="submit" value="Search">
-					</form>
+					<%= form_tag search_path, :method => 'get' do %>
+					<p>
+				    <%= text_field_tag :search, params[:search], :class => 'searchBox', :placeholder => "Search for a Question" %>
+				    <%= search_button_tag "Search", :name => nil, :class=> 'search' %>
+				  </p>
+				  <% end %>
 				</li>
 				<li>
 					<%= link_to "Profile", show_user_path(current_user.normalized_name) %>

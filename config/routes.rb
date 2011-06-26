@@ -1,6 +1,8 @@
 Mondai::Application.routes.draw do
   get "home/index"
   get "home/show"
+  get 'home/search'
+  match '/search/' => 'home#search', :as => "search"
   resources :questions do
     resources :answers
   end

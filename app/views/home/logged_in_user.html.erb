@@ -2,5 +2,5 @@
 
 <%= link_to "Profile", show_user_path(current_user.normalized_name) %>
 Welcome to your home page..Show your feed
-<%= link_to "New Question" , new_question_path %>
-<%= link_to "View Your Questions", home_show_path %>
+<%= add_button_link_to "New Question" , new_question_path %>
+<%= button_link_to "View Your Questions", home_show_path %>

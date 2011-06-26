@@ -1,0 +1,22 @@
+<div id="five_center">	
+	<%= form_for(@question) do |f| %>
+
+	<% if @question.errors.any? %>
+	  <div id="errorExplanation">
+	    <h2><%= pluralize(@question.errors.count, "error") %> prohibited this post from being saved:</h2>
+	    <ul>
+	    <% @question.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	  <% end %>
+		<%= f.label "Question" %><br />
+		<%= f.text_field :content, :size => "33px" %><br />
+		<%= f.label "Description (Optional)" %><br />
+		<%= f.text_area :description, :size => "50x10" %><br />
+		<%= f.label "Question Topics" %><br />
+		<%= f.text_field :topic_names, :size => "33px" %><br />
+		<%= add_button_tag "Create Question" %><br />
+	<% end %>
+</div>

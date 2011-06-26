@@ -15,4 +15,8 @@ class HomeController < ApplicationController
     @user_questions = current_user.questions
     @topics = Topic.all
   end
+  
+  def search
+    @questions = Question.search(params[:search])
+  end
 end

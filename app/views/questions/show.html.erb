@@ -39,7 +39,7 @@
 					</div>
 					<p class="single_answer">
 						<%=h answer.content.html_safe %>
-						 <%= link_to 'Delete', question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
+						 <%= remove_negative_button_link_to "Delete", question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
 					</p>
 					<div class="clear"></div>
 				</div><!-- .single_answer_container -->
@@ -50,7 +50,7 @@
 	<div id="answer_box">
 		<%= form_for :answer, :url => question_answers_path(@question) do |f| %>
 			<%= f.text_area :content, :cols => 80, :rows => 10 %>
-			<%= f.submit "Your Answer"%>
+			<%= comment_button_tag "Submit Answer"%>
 		<% end %>
 	</div>
 	<%= link_to 'Edit', edit_question_path(@question) %> |
