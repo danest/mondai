@@ -26,8 +26,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.update_attributes(params[:question])
-        format.html { redirect_to(@question,
-                      :notice => 'Question was successfully updated.') }
+        format.html { redirect_to show_question_path(@question.normalized_name, @question)}
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

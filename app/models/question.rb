@@ -16,7 +16,7 @@ class Question < ActiveRecord::Base
   default_scope :order => 'questions.created_at DESC'
   
   def normalized_name
-    self.content.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '')
+    self.content.gsub(' ', '-').gsub('.', '').gsub(/[^a-zA-Z0-9\_\-\.]/, '')
   end
   
   def topic_names

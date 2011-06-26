@@ -44,7 +44,7 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     @answer.destroy
     respond_to do |format|
-      format.html { redirect_to(show_question_path(params[:question_id],Question.find(params[:question_id]).normalized_name)) }
+      format.html { redirect_to(show_question_path(Question.find(params[:question_id]).normalized_name, params[:question_id],)) }
       format.xml  { head :ok }
     end
   end

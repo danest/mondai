@@ -3,7 +3,7 @@
 
 <% @user_questions.each do |questions| %>
 	<p>
-		<%= link_to questions.content , show_question_path(questions, :name => questions.normalized_name) %>
+		<%= link_to questions.content, show_question_path(questions.normalized_name, questions) %>
 	</p>
 	<p>
 		<%= questions.description %>
@@ -24,7 +24,7 @@
 	<p>
 		<%= topic.name %>
 		<% topic.questions.each do | name| %>
-		<%= link_to name.content, show_question_url(name, :name => name.normalized_name) %>
+		<%= link_to name.content, show_question_path(name.normalized_name, name) %>
 		<% end %>
 	</p>
 <% end %>
