@@ -1,26 +1,60 @@
-<p>
-  <b>Question:</b>
-  <%= @question.content %>
-</p>
- 
-<p>
-  <b>Description:</b>
-  <%= @question.description %>
-</p>
- 
-<p>
-  <b>Comments:</b>
-  To be implemented
-</p>
+<div id="question_container">
+	
+	<div id="topics">
+		<h2>Topics:</h2>
+		<div class="topic_container">
+			<ul class ="question_topics">
+				<% for topics in @question.topics %>
+					<li>
+						<%=h topics.name %>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	
+	<div id="question">
+		<h1>
+		  <%=h @question.content %>
+		</h1>
+		<p>
+		  <%=h @question.description %>
+		</p>
+		<p>
+			<%= link_to 'Edit', edit_question_path(@question) %>
+		</p>
+	</div>
+	
+	<div id="answer">
+		<h2>Answers:</h2>
+		<div id="answers_container">
+			<div id="something">
+				<% @question.answers.each do |answer| %>
+				<div class="single_answer_container">
+					<div class="user">
+						<%= image_tag answer.user.picture %>
+						<p class="clearLeft">
+							<%= answer.user.name %>
+						</p>
+					</div>
+					<p class="single_answer">
+						<%=h answer.content.html_safe %>
+						 <%= link_to 'Delete', question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
+					</p>
+					<div class="clear"></div>
+				</div><!-- .single_answer_container -->
+					<% end %>
+			</div>
+		</div>
+	</div>
+	<div id="answer_box">
+		<%= form_for :answer, :url => question_answers_path(@question) do |f| %>
+			<%= f.text_area :content, :cols => 80, :rows => 10 %>
+			<%= f.submit "Your Answer"%>
+		<% end %>
+	</div>
+	<%= link_to 'Edit', edit_question_path(@question) %> |
+	<%= link_to 'Back', home_show_path %>
 
-<p>
-	<% for topics in @question.topics %>
-	<li>
-		<%=h topics.name %>
-	</li>
-	<% end %>
-</p>
- 
- 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', home_show_path %>
+</div><!-- #question_container -->
+

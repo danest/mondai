@@ -97,6 +97,10 @@ class User < ActiveRecord::Base
   def feed_topic
     Question.from_topics_followed_by(self)
   end
+  
+  def normalized_name
+    self.name.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '')
+  end
 end
 
 

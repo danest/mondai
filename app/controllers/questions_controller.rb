@@ -10,10 +10,8 @@ class QuestionsController < ApplicationController
   
   def create
     @question = current_user.questions.create(params[:question])
-    #@question.topics.build(params[:topics])
     if @question.save
-      #@question.topics.build(params[:topics])
-      redirect_to home_show_path
+      redirect_to show_question_path(@question, @question.normalized_name)
     else
       render 'new'
     end
@@ -51,9 +49,10 @@ class QuestionsController < ApplicationController
   
   def show
     @question = Question.find(params[:id])
+    @answer = Answer.new
     respond_to do |format|
         format.html # show.html.erb
-        format.xml  { render :xml => @post }
+        format.xml  { render :xml => @question }
     end
   end
   

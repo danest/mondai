@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   def new
   end
   
+  def show
+    
+  end
+  
   #This will be use when we render the page for each user in both profile and question page.
   def user_following
     show_user_follow(:user_following)

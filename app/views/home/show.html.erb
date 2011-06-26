@@ -1,8 +1,9 @@
+
 <h1>These are your questions <%= current_user.name %></h1>
 
 <% @user_questions.each do |questions| %>
 	<p>
-		<%= link_to questions.content , show_post_path(questions, :name => questions.normalized_name) %>
+		<%= link_to questions.content , show_question_path(questions, :name => questions.normalized_name) %>
 	</p>
 	<p>
 		<%= questions.description %>
@@ -17,13 +18,13 @@
 		
 	</p>
 <% end %>
-<%= link_to current_user %>
+
 <h1>All Topics</h1>
 <% @topics.each do |topic| %>
 	<p>
 		<%= topic.name %>
 		<% topic.questions.each do | name| %>
-		<%= link_to name.content, show_post_path(name, :name => name.normalized_name) %>
+		<%= link_to name.content, show_question_url(name, :name => name.normalized_name) %>
 		<% end %>
 	</p>
 <% end %>

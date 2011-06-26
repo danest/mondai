@@ -1,12 +1,15 @@
 Mondai::Application.routes.draw do
   get "home/index"
   get "home/show"
-  resources :questions
+  resources :questions do
+    resources :answers
+  end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }
-  match 'questions/:id/:name' => 'questions#show', :as => "show_post"
-  get "users/new"
-
+  match '/:name' => 'users#show', :as => "show_user"
+  match 'questions/:id/:name' => 'questions#show', :as => "show_question"
+  get 'users/new'
+  get 'users/show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

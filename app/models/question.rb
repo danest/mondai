@@ -1,14 +1,5 @@
 class Question < ActiveRecord::Base
-  #before_save :check_for_existing_skill
-  def check_for_existing_skill
-    if self.topics
-      existing_skill = Topic.first
-      if existing_skill
-        self.topics = existing_skill
-      end
-    end
-  end
-  
+
   attr_accessible :content, :description, :name, :topic_names
   attr_accessor :topic_names
   belongs_to :user
