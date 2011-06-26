@@ -6,7 +6,7 @@
 			<ul class ="question_topics">
 				<% for topics in @question.topics %>
 					<li>
-						<%=h topics.name %>
+						<%=h link_to topics.name %>
 					</li>
 				<% end %>
 			</ul>

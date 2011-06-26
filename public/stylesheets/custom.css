@@ -81,7 +81,7 @@ html { overflow-y: scroll; }
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 
-ul, ol { margin-left: 2em; }
+ul, ol { margin-left: 0em; }
 ol { list-style-type: decimal; }
 
 /* Remove margins for navigation lists */
@@ -130,7 +130,7 @@ input:invalid, textarea:invalid {
 /* These selection declarations have to be separate
    No text-shadow: twitter.com/miketaylr/status/12228805301
    Also: hot pink! */
-::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::-moz-selection{ background: #FF847C; color:black; text-shadow: none; }
 ::selection { background:#FF847C; color:black; text-shadow: none; }
 
 /* j.mp/webkit-tap-highlight-color */
@@ -277,8 +277,9 @@ h1 a.home:hover{
 }
 
 #topbar h1{
-	width:90px;
+	width:200px;
 	display:inline;
+	float:left;
 }
 
 
@@ -326,40 +327,15 @@ h3{
 }
 
 
-li.tags{
-	list-style:none;
-	display:inline;
-}
-
-.tags p{
-	display:inline;
-	background-color:#550254;
-	color:white;
-	text-shadow:#111 0px 1px 1px;
-	padding:5px;
-	border-radius:6px;
-}
-.tags p:hover{
-	background-color:#6a0469;
-}
-.tags p a:hover, .tags p a:active, .tags p a{
-	text-decoration:none;
-	color:white;
-}
-.tags p a:hover{
-	text-decoration:underline;
-	color:white;
-}
-
 ul#topnav{
 	list-style:none;
 	display:inline;
-	float:right;
-	width:500px;
+	float:left;
+	width:600px;
 }
 
 ul#topnav li{
-	margin:5px;
+	margin-right:15px;
 	float:left;
 }
 
@@ -382,15 +358,31 @@ ul.question_topics li{
 	display:inline;
 	background-color:#dddedf;
 	color:#7a7b7c;
-	padding:2px;
+	padding:4px;
 	border-radius:6px;
 	margin:3px;
-	line-height:1.8em;
+	text-align:center;
+	line-height:2em;
+}
+ul.question_topics li a{
+	display:inline;
+	background-color:#dddedf;
+	color:#7a7b7c;
+	padding:4px;
+	text-align:center;
+	text-decoration:none;
+}
+ul.question_topics li a:hover{
+	color:#575758;
+	text-decoration:underline;
 }
 
 #question_container{
 	width:800px;
 	margin:0 auto;
+}
+#question h1{
+	/*color:black;*/
 }
 .topic_container, #answer_box{
 	width:560px;
@@ -449,7 +441,18 @@ ul.question_topics li{
 
 .search {
    border: 1px outset blue;
-   background-color:grey;
+   margin-top:-10px;
+   height:30px;
+   color:white;
+   background: -webkit-gradient(linear, left top, left bottom, from(#b2a48c), to(#9b8d74));
+   background: -moz-linear-gradient(top, #b2a48c, #9b8d74);
+   text-shadow: rgba(0,0,0,.2) 0 0 5px;
+
+}
+
+input[type="text"].searchBox{
+	height:25px;
+	width:300px;
 }
 
 b{
