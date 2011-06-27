@@ -17,7 +17,9 @@
 				<li>
 					<%= form_tag search_path, :method => 'get' do %>
 				    <%= text_field_tag :search, params[:search], :class => 'searchBox', :placeholder => "Search for a Question" %>
-				    <%= search_button_tag "Search", :name => nil, :class=> 'search' %>
+				</li>
+				<li>
+					<%= search_button_tag "Search", :name => nil, :class=> 'search' %>
 				  <% end %>
 				</li>
 			</ul>
