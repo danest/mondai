@@ -15,12 +15,12 @@
 		<% if current_user %>
 			<ul id="topnav">
 				<li>
-					<%= form_tag search_path, :method => 'get' do %>
+					<form action="<%= search_path %>" method="get" >
 				    <%= text_field_tag :search, params[:search], :class => 'searchBox', :placeholder => "Search for a Question" %>
 				</li>
 				<li>
 					<%= search_button_tag "Search", :name => nil, :class=> 'search' %>
-				  <% end %>
+				  </form>
 				</li>
 			</ul>
 			<ul id="toplinks">
