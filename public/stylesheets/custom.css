@@ -179,11 +179,20 @@ h2 {
 .container{
 	width:960px;
 	margin:auto;
+	padding-top: 60px;
+}
+.topnav_container{
+	width:960px;
+	margin:auto;
 }
 #topbar{
 	height:40px;
 	padding:10px;
 	background-color:#07E;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 div.regular label{
 	width: 100px;
@@ -334,16 +343,26 @@ ul#topnav{
 	width:600px;
 }
 
+ul#toplinks{
+	list-style:none;
+	display:inline;
+	float:right;
+}
+
 ul#topnav li{
 	margin-right:15px;
 	float:left;
 }
+ul#toplinks li{
+	margin-right:15px;
+	float:right;
+}
 
-ul#topnav li a{
+ul#toplinks li a{
 	font-weight:bold;
 	color:#51504f;
 }
-ul#topnav li a:hover{
+ul#toplinks li a:hover{
 	font-weight:bold;
 	color:#000;
 }
