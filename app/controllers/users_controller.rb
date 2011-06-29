@@ -3,7 +3,9 @@ class UsersController < ApplicationController
   end
   
   def show
-    
+    user = User.find_by_name(dn(params[:name]))
+    @user_questions = user.questions
+    @topics = Topic.all
   end
   
   #This will be use when we render the page for each user in both profile and question page.
@@ -21,4 +23,11 @@ class UsersController < ApplicationController
     @users = @user.send(action).paginate(:page => params[:page])
     render 'show_user_follow'
   end
+  
+  private
+    def dn(s)
+      s = s.to_s.gsub('-',' ')
+      s
+    end
+  
 end
