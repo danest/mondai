@@ -45,7 +45,11 @@
 	</div>
 </div>
 <div class="clear"></div>
-  <div class="container">
+	<% if current_user %>
+  		<div class="container">
+	<% else %>
+		<div class="mainpage">
+	<% end %>
     <% if notice  %>
       <p class="notice"><%= notice %></p>
     <% end %>
@@ -53,7 +57,6 @@
       <p class="alert"><%= alert %></p>
     <% end %>
     <%= yield %>
-
  </div>
 </body>
 </html>
