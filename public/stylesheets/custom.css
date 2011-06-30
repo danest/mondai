@@ -493,6 +493,33 @@ label{
 #five_center textarea{
 	padding:4px;
 }
+
+#about{
+
+}
+
+#box
+{
+	width: 150px;
+	height: 150px;
+	background: #FFF;
+	border: red dotted 5px;
+	text-align: center;
+	position: fixed;
+	margin-left: -75px;
+	margin-top: -75px;
+	left: 50%;
+	top: 50%;
+	z-index: 20;
+	display: none;
+}
+#screen{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #000;
+}
+
 /**
  * Non-semantic helper classes: please define your styles before this section.
  */
