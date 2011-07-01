@@ -193,7 +193,7 @@ h2 {
 	top: 0;
 	left: 0;
 	width: 100%;
-	border-bottom:1px solid #4b4a4a;
+	border-bottom:1px solid #000;
 }
 div.regular label{
 	width: 100px;
@@ -538,23 +538,32 @@ label{
     height: 400px;
 }
 #header{
-	border-top:1px solid #4b4a4a;
-}
-#footer h1{
-	opacity:.9;
+	/*border-top:1px solid #4b4a4a;*/
+	margin-top:-60px;
 	z-index:50;
-	background-color:#07E;
-	color:white;
+	background:rgba(0, 0, 0, 0.5);
 	min-width:1024px;
 	text-align:center;
-	
+
+}
+#footer h1{
+	color:white;
+	opacity:1;
+	z-index:90;
+	line-height:1.7em;
+}
+#tag{
+	color:white;
+	opacity:1;
 }
 #footersignin{
-	width:400px;
+	padding:10px;
+	width:350px;
 	float:left;
 	text-align:center;
 }
 #footeregister{
+	padding:10px;
 	width:400px;
 	float:left;
 	text-align:center;
