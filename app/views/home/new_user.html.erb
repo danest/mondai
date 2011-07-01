@@ -1,7 +1,6 @@
 <div id="bigimage">
 
 </div>
-<br />
 <div id="footer">
 	<div id="header">
 		<h1>Question your campus</h1>
@@ -9,13 +8,30 @@
 			The best place to find out about your campus
 		</p>
 	</div>
-	<div id="footersignin">
-		<p>
-			Sign in to join our private beta.
-		</p>
-		<%= big_primary_button_link_to "Sign Up With Facebook", user_omniauth_authorize_path(:facebook), :class => "popupp", :"data-width" => 600, :"data-height" => 400 %>
-	</div><!-- #footersignin -->
+	<div id="footerbottom">
+		<div id="footersignin">
+			<p>
+				<h4>Sign in to join our private beta with your facebook.</h4>
+			</p>
+			<%= big_primary_button_link_to "Sign Up With Facebook", user_omniauth_authorize_path(:facebook), :class => "popupp", :"data-width" => 600, :"data-height" => 400 %>
+		</div><!-- #footersignin -->
+		<div id="footeregister">
+			<p>
+				<h4>If you would like your campus to have this service, fill out the form.</h4>
+			</p>
+			<p>
+				<form>
+				Campus: <input type="text" name="firstname" /><br />
+				Email: <input type="text" name="lastname" />
+				</form>
+			</p>
+		</div><!-- #footerregister -->
+	</div><div class="clear"></div>
+	<div id="bottomabout">
+
+	</div><!-- #bottomabout -->
 </div>
+
 <div id="box">
 	<p>
 		This helps you find the best thing in you campus area. This is currently for
@@ -25,3 +41,4 @@
 </div>
 <div id='screen'>
 </div>
+
