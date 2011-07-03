@@ -61,6 +61,7 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:answer_id])
     @answer.count += 1
     if @answer.save
+      flash[:notice] = "Thank you for voting"
       redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
     else
       flash[:notice] = "Error Voting Please Try Again"

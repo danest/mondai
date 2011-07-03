@@ -48,12 +48,20 @@
 	<% else %>
 		<div class="mainpage">
 	<% end %>
-    <% if notice  %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-	<% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
+	<div id="flashes">
+
+	  <% if flash[:notice] %>
+	    <p id="flash_notice" class="messages notice"><%= flash[:notice] %></p>
+	    <%= javascript_tag "$('#flash_notice').delay(3000).fadeOut('slow');" %>
+	  <% end %>
+
+	  <% if flash[:error] || flash[:errors] %>
+	    <p id="flash_errors" class="messages errors alert"><%= flash[:error] || flash[:errors] %></p>
+	    <%= javascript_tag "$('#flash_errors').delay(3000).fadeOut('slow');" %>
+	  <% end %>
+
+	  <% flash[:error] = flash[:errors] = flash[:notice] = nil %>
+	</div>
     <%= yield %>
  </div>
 </body>
