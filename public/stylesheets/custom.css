@@ -597,6 +597,18 @@ label{
 	width:800px;
 	margin:0 auto;
 }
+.vote_up img:hover, .vote_down img:hover{
+	background-color:#7A7B7C;
+	border-radius:6px;
+}
+.vote_count{
+	text-align:center;
+}
+.vote_container{
+	width:25px;
+	float:left;
+	margin-left:10px;
+}
 
 
 

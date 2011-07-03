@@ -39,15 +39,18 @@
 					<p class="single_answer">
 						<%=h answer.content.html_safe %>
 					</p>
-					<p>
-						<%= link_to "Vote Up", question_answer_vote_up_path(@question, answer), :method => :put %>
-					</p>
-					<p>
-						<%= link_to "Vote Down", question_answer_vote_down_path(@question, answer), :method => :put %>
-					</p>
-					<p>
-						<%= remove_negative_button_link_to "Delete", question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
-					</p>
+					<div class="vote_container">	
+						<p class="vote_up">
+							<%= link_to image_tag("vote_up2.png"), question_answer_vote_up_path(@question, answer), :method => :put %>
+						</p>
+						<p class="vote_count"><%= answer.count %></p>
+						<p class="vote_down">
+							<%= link_to image_tag("vote_down2.png"), question_answer_vote_down_path(@question, answer), :method => :put %>
+						</p>
+						<p>
+							<%= remove_negative_button_link_to "Delete", question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
+						</p>
+					</div>
 					<div class="clear"></div>
 				</div><!-- .single_answer_container -->
 					<% end %>
