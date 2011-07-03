@@ -1,7 +1,15 @@
-
-<p>
-	Welcome to your home page..Show your feed
-</p>
-<%= add_button_link_to "New Question" , new_question_path %><br /><br />
-<%= button_link_to "View Your Questions", home_show_path %>
+<%= add_button_link_to "Ask A Question" , new_question_path %><br /><br />
+<h4>Newest Questions</h4>
+<% @questions.each do |question| %>
+	<div class="question">
+		<div class="question_image">
+			<%= image_tag question.user.picture %>
+		</div>
+		<div class="question_content">
+			<%= link_to question.content, show_question_path(question.normalized_name, question) %><br />
+			<%= question.description %>
+		</div>
+	</div><div class="clear"></div>
+	
+<% end %>
 

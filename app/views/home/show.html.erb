@@ -1,1 +1,6 @@
-show something
+<% @questions.each do |question| %>
+	<div class="question">
+		<%= question.content %>
+	</div>
+	
+<% end %>

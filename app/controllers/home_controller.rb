@@ -5,13 +5,15 @@ class HomeController < ApplicationController
   def index
     if !!current_user
       #show news feed or popular questions
+      @questions = Question.all  
       render :action => 'logged_in_user'
     else
       render :action => 'new_user'
     end
   end
 
-  def show  
+  def show
+    @questions = Question.all  
   end
   
   def search

@@ -186,14 +186,17 @@ h2 {
 	margin:auto;
 }
 #topbar{
-	height:40px;
-	padding:2px;
-	background-color:#07E;
+	height:36px;
+	padding-top:2px;
+	background-color:#19559b;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	border-bottom:1px solid #000;
+}
+a.button{
+	color:black;
 }
 div.regular label{
 	width: 100px;
@@ -291,8 +294,6 @@ h1 a.home:hover{
 	display:inline;
 	float:left;
 }
-
-
 
 div.field, div.actions {
   margin-bottom: 10px;
@@ -404,6 +405,33 @@ ul.question_topics li a:hover{
 #question h1{
 	/*color:black;*/
 }
+.question{
+	width:580px;
+	margin-bottom:10px;
+	padding:10px;
+	background-color:#E0EDF5;
+}
+div.question_image{
+	min-height:50px;
+	width:50px;
+	float:left;
+}
+.question_content{
+	border-radius:6px;
+	min-height:50px;
+	margin-left:60px;
+
+}
+.question_content a{
+	color:#2F5D92;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.question_content a:hover{
+	color:#4c7cb3;
+	text-decoration:underline;
+}
 .topic_container, #answer_box{
 	width:560px;
 	margin:0 auto;	
@@ -460,11 +488,8 @@ ul.question_topics li a:hover{
 }
 
 .search {
-   border: 1px outset blue;
    height:30px;
    color:black;
-   background: -webkit-gradient(linear, left top, left bottom, from(#b2a48c), to(#9b8d74));
-   background: -moz-linear-gradient(top, #b2a48c, #9b8d74);
    text-shadow: rgba(0,0,0,.2) 0 0 5px;
 
 }
@@ -572,12 +597,8 @@ label{
 	width:800px;
 	margin:0 auto;
 }
-#footer{
 
-}
-#bottomabout{
 
-}
 
 /**
  * Non-semantic helper classes: please define your styles before this section.

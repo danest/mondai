@@ -24,12 +24,10 @@
 				</li>
 			</ul>
 			<ul id="toplinks">
-				<li>
-					<%= link_to "Log Out", destroy_user_session_path %>
-				</li>
-				<li>
-					<%= link_to "Profile", show_user_path(current_user.normalized_name) %>
-				</li>
+				<%= button_group do %>
+					<%= button_link_to "Profile", show_user_path(current_user.normalized_name) %>
+					<%= button_link_to "Log Out", destroy_user_session_path %>		
+				<% end %>
 			</ul>
 			<% else %>
 				<ul id="topnav">
