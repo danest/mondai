@@ -38,7 +38,15 @@
 					</div>
 					<p class="single_answer">
 						<%=h answer.content.html_safe %>
-						 <%= remove_negative_button_link_to "Delete", question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
+					</p>
+					<p>
+						<%= link_to "Vote Up", question_answer_vote_up_path(@question, answer), :method => :put %>
+					</p>
+					<p>
+						<%= link_to "Vote Down", question_answer_vote_down_path(@question, answer), :method => :put %>
+					</p>
+					<p>
+						<%= remove_negative_button_link_to "Delete", question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
 					</p>
 					<div class="clear"></div>
 				</div><!-- .single_answer_container -->

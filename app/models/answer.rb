@@ -1,9 +1,9 @@
 class Answer < ActiveRecord::Base
-  attr_accessible :content, :user_id
+  attr_accessible :content, :user_id, :count
   belongs_to :user
   belongs_to :question
   #validates :content, :presence => true
-  #default_scope :order => 'answers.created_at DESC'
+  default_scope :order => 'answers.count DESC'
 end
 
 # == Schema Information

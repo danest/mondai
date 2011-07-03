@@ -13,11 +13,10 @@
 ActiveRecord::Schema.define(:version => 20110722144148) do
 
   create_table "answers", :force => true do |t|
-    t.string   "content"
+    t.text     "content"
     t.integer  "user_id"
     t.integer  "question_id"
-    t.integer  "vote_up"
-    t.integer  "vote_down"
+    t.integer  "count",       :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,8 +42,8 @@ ActiveRecord::Schema.define(:version => 20110722144148) do
   add_index "q_relationships", ["q_follower_id"], :name => "index_q_relationships_on_q_follower_id"
 
   create_table "questions", :force => true do |t|
-    t.string   "content"
-    t.string   "description"
+    t.text     "content"
+    t.text     "description"
     t.integer  "user_id"
     t.boolean  "has_answer"
     t.datetime "created_at"

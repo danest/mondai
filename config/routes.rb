@@ -4,7 +4,10 @@ Mondai::Application.routes.draw do
   get 'home/search'
   match '/search/' => 'home#search', :as => "search"
   resources :questions do
-    resources :answers
+    resources :answers do
+       put :vote_up
+       put :vote_down
+    end
   end
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }

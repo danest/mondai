@@ -55,7 +55,29 @@ class AnswersController < ApplicationController
         format.html # show.html.erb
         format.xml  { render :xml => @post }
     end
-  end  
+  end 
+  
+  def vote_up
+    @answer = Answer.find(params[:answer_id])
+    @answer.count += 1
+    if @answer.save
+      redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
+    else
+      flash[:notice] = "Error Voting Please Try Again"
+      redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
+    end
+  end
+  
+  def vote_down
+     @answer = Answer.find(params[:answer_id])
+      @answer.count -= 1
+      if @answer.save
+        redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
+      else
+        flash[:notice] = "Error Voting Please Try Again"
+        redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
+      end
+  end 
   #Allowing admin to delete answer
   private
     def authorized_user
