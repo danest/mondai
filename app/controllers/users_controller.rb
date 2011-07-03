@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    user = User.find_by_name(dn(params[:name]))
+    user = User.find(params[:id])
     @user_questions = user.questions
     @topics = Topic.all
   end

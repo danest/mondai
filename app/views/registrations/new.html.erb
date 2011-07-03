@@ -1,5 +1,5 @@
-
-<h2>Sign up</h2>
+<div class="container">
+<h2>Registration</h2>
 <% 	if  session["devise.facebook_data"]
 	user_name = session["devise.facebook_data"]['user_info']['first_name'] + " " + session["devise.facebook_data"]['user_info']['last_name']
 	user_email = session["devise.facebook_data"]['user_info']['email']
@@ -8,12 +8,18 @@
 	@graph = Koala::Facebook::GraphAPI.new(session["devise.facebook_data"]['credentials']['token'])
 	@friends = @graph.get_connections("me", "friends")
 else
-	user_name = ""
-	user_email = ""
-	#@friends = []
+	flash[:notice] = "Please log in with facebook"
+%>
+	<script type="text/javascript">
+	<!--
+	window.location = "http://localhost:3000/users/auth/facebook"
+	//-->
+	</script>
+<%
 end
 %>
 <div id="signup">
+	<h4>Is this information correct?</h4>
 	<div class="regular">
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -42,5 +48,6 @@ end
 			<% end %>
 		<% end %>
 	<% end %>
+</div>
 </div>
 <%# render :partial => "devise/shared/links" %>

@@ -25,7 +25,7 @@
 			</ul>
 			<ul id="toplinks">
 				<%= button_group do %>
-					<%= button_link_to "Profile", show_user_path(current_user.normalized_name) %>
+					<%= button_link_to "Profile", show_user_path(current_user.normalized_name, current_user) %>
 					<%= button_link_to "Log Out", destroy_user_session_path %>		
 				<% end %>
 			</ul>
