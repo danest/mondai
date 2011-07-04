@@ -412,6 +412,7 @@ ul.question_topics li a:hover{
 
 #question_container{
 	width:600px;
+	float:left;
 }
 #question h1{
 	/*color:black;*/
@@ -452,7 +453,7 @@ div.question_image{
 }
 #topics{
 	margin-top:10px;
-	padding:5px;
+
 }
 #topics h2, #answer h2{
 	float:left;
@@ -460,7 +461,7 @@ div.question_image{
 }
 
 #question, .single_answer{
-	padding:5px;
+	padding:0px;
 }
 .single_answer{
 	margin-top:10px;
@@ -655,6 +656,7 @@ div.socialshare{
 	margin-top:5px;
 	background-color:#E0EDF5;
 	height:22px;
+	padding-top:1px;
 }
 #socialshare li{
 	list-style:none;
@@ -668,7 +670,23 @@ div.socialshare{
 	margin-left:1px;
 	margin-top:4px;
 }
-
+#toprightbox{
+	width:300px;
+	border:1px solid #DDDEDF;
+	float:right;
+	margin-top:10px;
+	margin-right:10px;
+	border-radius:6px;
+	padding:5px;
+}
+#profileimage{
+	float:left;
+	width:50px;
+}
+#profileabout{
+	padding:5px;
+	margin-left:60px;
+}
 
 
 /**

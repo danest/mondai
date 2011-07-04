@@ -91,7 +91,24 @@
 		<%= link_to 'Home', root_path %>
 		
 	</div><!-- #question_container -->
+	<div id="toprightbox">
+		<p>
+			Question Owner
+		</p>
+		<div id="profileimage">
+			<%= image_tag @question.user.picture %>
+		</div>
+		<div id="profileabout">
+			<p>
+				<%= @question.user.name %>
+			</p>
+			<p>
+				A short blurb about them. Something that they are interested in and other stuff.
+			</p>
+		</div>
+	</div>
 </div>
+<div class="clear"></div>
 
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 <script type="text/javascript">
