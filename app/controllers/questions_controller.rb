@@ -4,7 +4,8 @@ class QuestionsController < ApplicationController
   
   # Need to discuss before us to implement these 2 funcs 
   before_filter :authenticate_user!, :only => :new
-   before_filter :store_location 
+  before_filter :store_location
+   
   def new
     @question = Question.new
   end
