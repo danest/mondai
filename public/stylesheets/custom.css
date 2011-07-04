@@ -39,7 +39,16 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-blockquote, q { quotes: none; }
+i{
+	font-style:italic
+}
+
+blockquote, q { 
+  font: 14px/22px normal helvetica, sans-serif;
+  margin-bottom: 10px;
+  margin-left: 50px;
+  padding-left: 15px;
+  border-left: 3px solid #ccc; }
 
 blockquote:before, blockquote:after,
 q:before, q:after { content: ""; content: none; }
@@ -179,7 +188,7 @@ h2 {
 .container{
 	width:960px;
 	margin:auto;
-	padding-top: 60px;
+	padding-top: 40px;
 }
 .topnav_container{
 	width:960px;
@@ -194,6 +203,7 @@ h2 {
 	left: 0;
 	width: 100%;
 	border-bottom:1px solid #000;
+	z-index:500;
 }
 a.button{
 	color:black;
@@ -401,8 +411,7 @@ ul.question_topics li a:hover{
 }
 
 #question_container{
-	width:800px;
-	margin:0 auto;
+	width:600px;
 }
 #question h1{
 	/*color:black;*/
@@ -435,8 +444,7 @@ div.question_image{
 	text-decoration:underline;
 }
 .topic_container, #answer_box{
-	width:560px;
-	margin:0 auto;	
+	
 }
 #answer_box form{
 	width:560px;
@@ -444,6 +452,7 @@ div.question_image{
 }
 #topics{
 	margin-top:10px;
+	padding:5px;
 }
 #topics h2, #answer h2{
 	float:left;
@@ -452,22 +461,24 @@ div.question_image{
 
 #question, .single_answer{
 	padding:5px;
-	width:560px;
-	margin:0 auto;
 }
 .single_answer{
+	margin-top:10px;
 	border-bottom:1px solid #dee0e1;
-	padding:2px;
+	padding:0px;
 	padding-bottom:5px;
+	float:left;
+	width:600px;
+	min-height:40px;
 }
 .single_answer_container{
 	margin-top:20px;
 }
-.single_answer{
-	float:left;
-	width:560px;
-	margin:0 auto;
-	min-height:60px;
+.psafeanswer{
+	font: 13px/19px normal "Helvetica Neue",Helvetica,Arial, sans-serif;
+}
+#q_description{
+	font: 14px/18px normal garamond, sans-serif;
 }
 
 #answers_container{
@@ -477,8 +488,14 @@ div.question_image{
 	padding-top:20px;
 }
 .user{
-	width:110px;
-	min-height:60px;
+	min-height:25px;
+	border-bottom:1px solid black;
+	width:25px;
+	float:left;
+}
+.user_name{
+	margin-left:10px;
+	margin-top:5px;
 	float:left;
 }
 .user img{
@@ -613,8 +630,9 @@ label{
 }
 .vote_container{
 	width:25px;
-	float:left;
-	margin-left:10px;
+	float:right;
+	margin-top:2px;
+	margin-right:-40px;
 }
 .social{
 	width: 150px;

@@ -1,70 +1,79 @@
-<div id="question_container">	
-	<div id="topics">
-		<h2>Topics:</h2>
-		<div class="topic_container">
-			<ul class ="question_topics">
-				<% for topics in @question.topics %>
-					<li>
-						<%=h link_to topics.name %>
-					</li>
-				<% end %>
-			</ul>
-		</div>
-	</div>
-	
-	<div id="question">
-		<h1>
-		  <%=h @question.content %>
-		</h1>
-		<p>
-		  <%=h @question.description %>
-		</p>
-		<p>
-			<%= link_to 'Edit', edit_question_path(@question) %>
-		</p>
-	</div>
-	
-	<div id="answer">
-		<h2>Answers:</h2>
-		<div id="answers_container">
-			<div id="something">
-				<% @question.answers.each do |answer| %>
-				<div class="single_answer_container">
-					<div class="user">
-						<%= image_tag answer.user.picture %>
-						<p class="clearLeft">
-							<%= answer.user.name %>
-						</p>
-					</div>
-					<p class="single_answer">
-						<%=h answer.content.html_safe %>
-					</p>
-					<div class="vote_container">	
-						<p class="vote_up">
-							<%= link_to image_tag("vote_up2.png"), question_answer_vote_up_path(@question, answer), :method => :put %>
-						</p>
-						<p class="vote_count"><%= answer.count %></p>
-						<p class="vote_down">
-							<%= link_to image_tag("vote_down2.png"), question_answer_vote_down_path(@question, answer), :method => :put %>
-						</p>
-						<p>
-							<%= remove_negative_button_link_to "Delete", question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
-						</p>
-					</div>
-					<div class="clear"></div>
-				</div><!-- .single_answer_container -->
+<% unless current_user %>
+	<div class="container">
+<% end %>
+	<div id="question_container">	
+		<div id="topics">
+			<h2>Topics:</h2>
+			<div class="topic_container">
+				<ul class ="question_topics">
+					<% for topics in @question.topics %>
+						<li>
+							<%=h link_to topics.name %>
+						</li>
 					<% end %>
+				</ul>
 			</div>
 		</div>
-	</div>
-	<div id="answer_box">
-		<%= form_for :answer, :url => question_answers_path(@question) do |f| %>
-			<%= f.text_area :content, :cols => 80, :rows => 10 %>
-			<%= comment_button_tag "Submit Answer"%>
-		<% end %>
-	</div>
-	<%= link_to 'Edit', edit_question_path(@question) %> |
-	<%= link_to 'Back', home_show_path %>
+	
+		<div id="question">
+			<h1>
+			  <%=h @question.content %>
+			</h1>
+			<p id="q_description">
+			  <%=h @question.description %>
+			</p>
+				<% if @question.user.id == current_user.id %>
+				<p>
+					<%= link_to 'Edit', edit_question_path(@question) %>
+				</p>
+				<% end %>
+		</div>
+	
+		<div id="answer">
+			<h2>Answers:</h2>
+			<div id="answers_container">
+				<div id="something">
+					<% @question.answers.each do |answer| %>
+					<div class="single_answer_container">
+						<div class="user">
+							<%= image_tag answer.user.picture, :size => "25x25" %>
+						</div>
+						<p class="user_name">
+							<%= answer.user.name %>
+						</p>
+						<div class="single_answer">
+							<%= raw sanitize(simple_format(answer.content, :class=> 'psafeanswer'), :tags => %w(strong em b i hr br ul ol li blockquote p) ) %>
+							<% if answer.user.id == current_user.id %>
+								<p>
+									<%= remove_negative_button_link_to "Delete Comment", question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
+									<%= link_to "Edit Answer", answer_edit_path(answer) %>
+								</p>
+							<% end %>
+						</div>
+						<div class="vote_container">	
+							<p class="vote_up">
+								<%= link_to image_tag("vote_up2.png"), question_answer_vote_up_path(@question, answer), :method => :put %>
+							</p>
+							<p class="vote_count"><%= answer.count %></p>
+							<p class="vote_down">
+								<%= link_to image_tag("vote_down2.png"), question_answer_vote_down_path(@question, answer), :method => :put %>
+							</p>
+						</div>
+						<div class="clear"></div>
+					</div><!-- .single_answer_container -->
+						<% end %>
+				</div>
+			</div>
+		</div>
+		<div id="answer_box">
+			<%= form_for :answer, :url => question_answers_path(@question) do |f| %>
+				<%= f.text_area :content, :cols => 80, :rows => 10 %>
+				<%= comment_button_tag "Submit Answer"%>
+			<% end %>
+		</div>
+		<%= link_to 'Edit', edit_question_path(@question) %> |
+		<%= link_to 'Back', home_show_path %>
 
-</div><!-- #question_container -->
+	</div><!-- #question_container -->
+
 

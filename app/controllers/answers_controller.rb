@@ -29,7 +29,7 @@ class AnswersController < ApplicationController
 
     respond_to do |format|
       if @answer.update_attributes(params[:answer])
-        format.html { redirect_to(@answer,
+        format.html { redirect_to(session[:return_to],
                       :notice => 'Answer was successfully updated.') }
         format.xml  { head :ok }
       else
