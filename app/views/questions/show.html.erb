@@ -22,12 +22,29 @@
 			<p id="q_description">
 			  <%=h @question.description %>
 			</p>
-				<% if @question.user.id == current_user.id %>
+				<% if !current_user.nil? && current_user.id ==  @question.user.id %>
 				<p>
 					<%= link_to 'Edit', edit_question_path(@question) %>
 				</p>
 				<% end %>
-		</div>
+				<div class="socialshare">
+					<ul id="socialshare">
+						<li class="sharetext">
+							<b>Share With Friends</b>
+						</li>
+						<li>
+							<div id="fb-root"></div><fb:like href=""  send="true" layout="button_count" width="450" show_faces="false" font="lucida grande"></fb:like>
+						</li>
+						<li class="gplus">
+							<g:plusone size="medium"></g:plusone>	
+						</li>
+						<li class="twitter">
+							<a href="http://twitter.com/share" class="twitter-share-button" data-url="" data-count="horizontal" data-via="">Tweet</a>
+						
+						</li>
+					</ul>
+				</div>
+		</div><div class="clear"></div>
 	
 		<div id="answer">
 			<h2>Answers:</h2>
@@ -43,7 +60,7 @@
 						</p>
 						<div class="single_answer">
 							<%= raw sanitize(simple_format(answer.content, :class=> 'psafeanswer'), :tags => %w(strong em b i hr br ul ol li blockquote p) ) %>
-							<% if answer.user.id == current_user.id %>
+							<% if !current_user.nil? && answer.user.id == current_user.id %>
 								<p>
 									<%= remove_negative_button_link_to "Delete Comment", question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
 									<%= link_to "Edit Answer", answer_edit_path(answer) %>
@@ -71,9 +88,17 @@
 				<%= comment_button_tag "Submit Answer"%>
 			<% end %>
 		</div>
-		<%= link_to 'Edit', edit_question_path(@question) %> |
-		<%= link_to 'Back', home_show_path %>
-
+		<%= link_to 'Home', root_path %>
+		
 	</div><!-- #question_container -->
+</div>
 
-
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("#fb_like").attr("href") = encodeURIComponent(window.location);
+	$(".twitter-share-button").attr("data-url") = encodeURLComponent(window.location);
+	});
+</script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js#appId=233421873346550&amp;xfbml=1"></script>

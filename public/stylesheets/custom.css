@@ -482,7 +482,7 @@ div.question_image{
 }
 
 #answers_container{
-	margin-top:10px;
+	margin-top:5px;
 }
 #something{
 	padding-top:20px;
@@ -650,6 +650,23 @@ a:active.social {
 }
 a:hover.social {
 	background-position:0px -48px;
+}
+div.socialshare{
+	margin-top:5px;
+	background-color:#E0EDF5;
+	height:22px;
+}
+#socialshare li{
+	list-style:none;
+	float:left;
+	width:125px;
+}
+#socialshare li.twitter, #socialshare li.gplus{
+	width:70px;
+}
+.sharetext{
+	margin-left:1px;
+	margin-top:4px;
 }
 
 
