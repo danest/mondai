@@ -36,7 +36,10 @@
 				</ul>
 				<ul id="toplinks">
 					<li>
-						<%= primary_button_link_to "Log In With FB", user_omniauth_authorize_path(:facebook), :class => "popupp", :"data-width" => 600, :"data-height" => 400 %>
+						<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class=> "ir social" %>
+					</li>
+					<li id="return">
+						Returning User? Sign in.
 					</li>
 				</ul>
 		<% end %>

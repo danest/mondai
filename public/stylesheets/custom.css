@@ -336,13 +336,15 @@ div.field, div.actions {
 h3{
 
 }
-
+#return{
+	color:white;
+}
 
 ul#topnav{
 	list-style:none;
 	display:inline;
 	float:left;
-	width:600px;
+	width:400px;
 }
 
 ul#toplinks{
@@ -587,6 +589,11 @@ label{
 	float:left;
 	text-align:center;
 }
+#footersignin a{
+	margin-top:5px;
+	margin-left:100px;
+	text-align:center;
+}
 #footeregister{
 	padding:10px;
 	width:400px;
@@ -608,6 +615,23 @@ label{
 	width:25px;
 	float:left;
 	margin-left:10px;
+}
+.social{
+	width: 150px;
+	height: 22px;
+	background-position:0px 0px;
+	background: url('../images/signin_facebook.png') no-repeat;
+}
+
+a.social{
+	background-position:0px 0px;
+}
+a:active.social {
+	position: relative;
+	top: 1px;
+}
+a:hover.social {
+	background-position:0px -48px;
 }
 
 
