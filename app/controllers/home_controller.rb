@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   
   before_filter :authenticate_user!, :only => :show 
+  before_filter :store_location
   
   def index
     if !!current_user

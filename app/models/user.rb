@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 
   
   validates :name, :presence => true
+  validates :uid, :presence => true
   #we want it to have an email, and make sure the email is unique
   validates :email, :presence => true,
                     #:format => { :with => :email_regex },

@@ -9,9 +9,8 @@ Mondai::Application.routes.draw do
        put :vote_down
     end
   end
-
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }
-  match '/:name/:id' => 'users#show', :as => "show_user"
+  match 'u/:name/:id' => 'users#show', :as => "show_user"
   match '/:name/:id' => 'questions#show', :as => "show_question"
   get 'users/new'
   get 'users/show'
