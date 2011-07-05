@@ -7,16 +7,16 @@ class AnswerTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: answers
 #
 #  id          :integer         not null, primary key
-#  content     :string(255)
+#  content     :text
 #  user_id     :integer
 #  question_id :integer
-#  vote_up     :integer
-#  vote_down   :integer
+#  count       :integer         default(0), not null
 #  created_at  :datetime
 #  updated_at  :datetime
 #

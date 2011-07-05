@@ -7,13 +7,14 @@ class QuestionTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: questions
 #
 #  id          :integer         not null, primary key
-#  content     :string(255)
-#  description :string(255)
+#  content     :text
+#  description :text
 #  user_id     :integer
 #  has_answer  :boolean
 #  created_at  :datetime

@@ -6,3 +6,15 @@ class EnrollmentTest < ActiveSupport::TestCase
     assert true
   end
 end
+
+# == Schema Information
+#
+# Table name: enrollments
+#
+#  id          :integer         not null, primary key
+#  question_id :integer
+#  topic_id    :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

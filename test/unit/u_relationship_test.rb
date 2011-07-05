@@ -6,3 +6,15 @@ class URelationshipTest < ActiveSupport::TestCase
     assert true
   end
 end
+
+# == Schema Information
+#
+# Table name: u_relationships
+#
+#  id            :integer         not null, primary key
+#  u_follower_id :integer
+#  u_followed_id :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
