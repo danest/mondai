@@ -458,6 +458,7 @@ div.question_image{
 #topics h2, #answer h2{
 	float:left;
 	width:70px;
+	margin-top:5px;
 }
 
 #question, .single_answer{
