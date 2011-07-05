@@ -662,13 +662,14 @@ div.socialshare{
 #socialshare li{
 	list-style:none;
 	float:left;
-	width:125px;
 }
 #socialshare li.twitter, #socialshare li.gplus{
 	width:70px;
+	z-index:20;
 }
 .sharetext{
 	margin-left:1px;
+	margin-right:4px;
 	margin-top:4px;
 }
 #toprightbox{
@@ -688,6 +689,14 @@ div.socialshare{
 	padding:5px;
 	margin-left:60px;
 }
+#LikePluginPagelet{
+	width:125px !important;
+}
+.fb_iframe_widget iframe{
+	width:125px !important;
+}
+
+
 
 
 /**
