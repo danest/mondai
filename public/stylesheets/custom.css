@@ -529,9 +529,7 @@ b{
 }
 
 div#five_center{
-	padding: 5px;
-	width: 560px;
-	margin: 0 auto;
+	width: 600px;
 }
 label{
 	font-size:1.4em;
