@@ -529,6 +529,7 @@ b{
 }
 
 div#five_center{
+	padding-top:10px;
 	width: 600px;
 }
 label{
