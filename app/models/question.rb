@@ -36,7 +36,7 @@ class Question < ActiveRecord::Base
   
   def self.search(search)
     if !search.empty?
-      where('content LIKE ?', "%#{search}%")
+      where('lower(content) LIKE ?', "%#{lower(search)}%")
     end
   end
   
