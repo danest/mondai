@@ -447,8 +447,11 @@ div.question_image{
 .topic_container, #answer_box{
 	
 }
+
+#answer_box{
+	margin-top:15px;
+}
 #answer_box form{
-	width:560px;
 	margin:0 auto;	
 }
 #topics{
