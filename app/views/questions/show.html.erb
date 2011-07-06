@@ -61,7 +61,7 @@
 							<%= raw sanitize(simple_format(answer.content, :class=> 'psafeanswer'), :tags => %w(strong em b i hr br ul ol li blockquote p) ) %>
 							<% if !current_user.nil? && answer.user.id == current_user.id %>
 								<p>
-									<%= remove_negative_button_link_to "Delete Comment", question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
+									<%= link_to "Delete Comment", question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
 									<%= link_to "Edit Answer", answer_edit_path(answer) %>
 								</p>
 							<% end %>
@@ -84,7 +84,7 @@
 		<div id="answer_box">
 			<%= form_for :answer, :url => question_answers_path(@question) do |f| %>
 				<%= f.text_area :content, :cols => 80, :rows => 10 %>
-				<%= comment_button_tag "Submit Answer"%>
+				<%= comment_button_tag "Submit Response"%>
 			<% end %>
 		</div>
 		<%= link_to 'Home', root_path %>
