@@ -1,4 +1,6 @@
-<%= add_button_link_to "Ask A Question" , new_question_path %><br /><br />
+<div id="askquestion">
+	<%= add_button_link_to "Ask A Question" , new_question_path %>
+</div>
 <h4>Newest Questions</h4>
 <% @questions.each do |question| %>
 	<div class="question">
