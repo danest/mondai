@@ -82,6 +82,7 @@
 			</div>
 		</div>
 		<div id="answer_box">
+			<h4>Your Answer:</h4>
 			<%= form_for :answer, :url => question_answers_path(@question) do |f| %>
 				<%= f.text_area :content, :cols => 80, :rows => 10 %>
 				<%= comment_button_tag "Submit Response"%>
