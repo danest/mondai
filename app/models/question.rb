@@ -21,14 +21,15 @@ class Question < ActiveRecord::Base
   
   def topic_names
     #this allows to see the topics when we click edit
-    @topic_names || topics.map(&:name).join(' ')
+    @topic_names || topics.map(&:name).join(', ')
   end
   
   
   def assign_topics
     if @topic_names
       #assign the correct associations in our model
-      self.topics = @topic_names.split(/\s+/).map do |name|
+      #allow for comma separated
+      self.topics = @topic_names.split(/[\s,]+/).map do |name|
         Topic.find_or_create_by_name(name)
       end
     end
