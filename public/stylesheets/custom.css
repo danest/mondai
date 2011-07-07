@@ -194,6 +194,9 @@ h2 {
 	width:960px;
 	margin:auto;
 }
+body{
+	min-height:1000px;
+}
 #topbar{
 	height:39px;
 	padding-top:2px;
