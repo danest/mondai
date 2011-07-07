@@ -553,18 +553,54 @@ label{
 
 #box
 {
-	width: 150px;
-	height: 150px;
+	width: 500px;
 	background: #FFF;
-	border: red dotted 5px;
-	text-align: center;
+	border: 1px solid grey;
+	padding:15px;
+	border-radius:6px;
 	position: fixed;
-	margin-left: -75px;
+	margin-left: -200px;
 	margin-top: -75px;
 	left: 50%;
 	top: 50%;
 	z-index: 20;
 	display: none;
+}
+#learnmore a{
+	color:white;
+	font-weight:bold;
+	text-decoration:none;
+	font-style:helvetica;
+	letter-spacing:1px;
+}
+
+#learnmore{
+	background-color: #222;
+	display: inline-block;
+	padding: 5px 10px 6px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 1;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-shadow: 0 -1px 1px #222;
+	border-bottom: 1px solid #222;
+	position: relative;
+	cursor: pointer;
+}
+#learnmore a:hover{
+	text-decoration:underline;
+	background-color: #111; 
+	color: #fff; 
+}
+#learnmore:hover{
+	background-color: #111; 
+	color: #fff; 
+}
+#learnmore:active{
+	position:relative;
+	top: 1px;
 }
 #screen{
     position: absolute;
