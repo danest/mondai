@@ -1,16 +1,30 @@
-<div id="askquestion">
-	<%= add_button_link_to "Ask A Question" , new_question_path %>
+<div id="question_container">	
+	<div id="askquestion">
+		<%= add_button_link_to "Ask A Question" , new_question_path %>
+	</div>
+	<h4>Newest Questions</h4>
+	<% @questions.each do |question| %>
+		<div class="question">
+			<div class="question_image">
+				<%= image_tag question.user.picture %>
+			</div>
+			<div class="question_content">
+				<%= link_to question.content, show_question_path(question.normalized_name, question) %><br />
+				<%= question.description %>
+			</div>
+		</div><div class="clear"></div>	
+	<% end %>
 </div>
-<h4>Newest Questions</h4>
-<% @questions.each do |question| %>
-	<div class="question">
-		<div class="question_image">
-			<%= image_tag question.user.picture %>
+	<div id="toprightbox">
+		<h2>Topics</h2>
+		<div class="topic_container">
+			<ul class ="question_topics">
+				<% @topics.each do |topic|%>
+					<li>
+						<%= link_to topic.name, show_topic_path(topic.name, topic) %>
+					</li>
+				<% end %>
+			</ul>
 		</div>
-		<div class="question_content">
-			<%= link_to question.content, show_question_path(question.normalized_name, question) %><br />
-			<%= question.description %>
-		</div>
-	</div><div class="clear"></div>	
-<% end %>
-
+	</div>
+<div class="clear"></div>

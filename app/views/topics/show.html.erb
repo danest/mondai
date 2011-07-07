@@ -1,0 +1,5 @@
+<% @topic.questions.each do |question| %>
+	<p>
+		<%= link_to question.content, show_question_path(question.normalized_name, question) %>
+	</p>
+<% end %>

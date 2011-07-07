@@ -1,7 +1,7 @@
 Mondai::Application.routes.draw do
   get "home/index"
   get "home/show"
-  get 'home/search'
+ #get 'home/search'
   match '/search/' => 'home#search', :as => "search"
   resources :questions do
     resources :answers do
@@ -12,8 +12,9 @@ Mondai::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }
   match 'u/:name/:id' => 'users#show', :as => "show_user"
   match '/:name/:id' => 'questions#show', :as => "show_question"
-  get 'users/new'
-  get 'users/show'
+  match '/topic/:name/:id' => 'topics#show', :as => 'show_topic'
+  #get 'users/new'
+  #get 'users/show'
   get 'answers/edit/:id' => 'answers#edit', :as => 'answer_edit'
   put 'answers/edit/:id' => 'answers#update', :as => 'answer_edit'
   

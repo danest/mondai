@@ -6,9 +6,9 @@
 			<h2>Topics:</h2>
 			<div class="topic_container">
 				<ul class ="question_topics">
-					<% for topics in @question.topics %>
+					<% for topic in @question.topics %>
 						<li>
-							<%=h link_to topics.name %>
+							<%= link_to topic.name, show_topic_path(topic.name, topic) %>
 						</li>
 					<% end %>
 				</ul>
