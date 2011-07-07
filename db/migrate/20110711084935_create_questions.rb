@@ -10,6 +10,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.timestamps
     end
     add_index :questions, :user_id
+    add_index :questions, :content
   end
 
   def self.down

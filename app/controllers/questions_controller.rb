@@ -25,7 +25,6 @@ class QuestionsController < ApplicationController
   
   def update
     @question = Question.find(params[:id])
-
     respond_to do |format|
       if @question.update_attributes(params[:question])
         format.html { redirect_to show_question_path(@question.normalized_name, @question)}
@@ -43,7 +42,7 @@ class QuestionsController < ApplicationController
     @question.destroy
 
     respond_to do |format|
-      format.html { redirect_to(home_show_path) }
+      format.html { redirect_to(root_path) }
       format.xml  { head :ok }
     end
   end

@@ -6,8 +6,6 @@ class Question < ActiveRecord::Base
   has_many :enrollments
   has_many :topics, :through => :enrollments
   has_many :answers, :dependent => :destroy
-  #belongs_to :topic, :autosave => true
-  #accepts_nested_attributes_for :topics
   validates :content, :presence => true
   
   #generates a method topic_names= that sets the value of the instance variable @topic_names
@@ -30,6 +28,7 @@ class Question < ActiveRecord::Base
       #assign the correct associations in our model
       #allow for comma separated
       self.topics = @topic_names.split(/[\s,]+/).map do |name|
+        name = name.capitalize
         Topic.find_or_create_by_name(name)
       end
     end
