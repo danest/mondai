@@ -752,10 +752,10 @@ div.socialshare{
 .all_topics{
 	float:none;
 }
-.all_topics ul li{
+.all_topics li{
 	list-style:none;
 }
-.all_topics a{
+.all_topics li a{
 	font-size:1em;
 }
 
