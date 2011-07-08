@@ -749,7 +749,9 @@ div.socialshare{
 	margin-top:10px;
 	margin-bottom:10px;
 }
-
+.all_topics{
+	float:none;
+}
 
 /**
  * Non-semantic helper classes: please define your styles before this section.
