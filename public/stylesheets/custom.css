@@ -752,6 +752,12 @@ div.socialshare{
 .all_topics{
 	float:none;
 }
+.all_topics ul li{
+	list-style:none;
+}
+.all_topics a{
+	font-size:1em;
+}
 
 /**
  * Non-semantic helper classes: please define your styles before this section.
