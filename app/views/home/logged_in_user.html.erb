@@ -18,7 +18,7 @@
 	<div id="toprightbox">
 		<h2>Topics</h2>
 		<div class="topic_container">
-			<ul class ="question_topics">
+			<ul class ="question_topicss">
 				<% @topics.each do |topic|%>
 					<li>
 						<%= link_to topic.name, show_topic_path(topic.name, topic) %>
