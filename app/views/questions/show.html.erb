@@ -1,4 +1,4 @@
-<% title @question.content %>
+<% yield_or_default(:title, @question.content) %>
 <% unless current_user %>
 	<div class="container">
 <% end %>
