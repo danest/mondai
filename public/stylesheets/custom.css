@@ -463,6 +463,8 @@ div.question_image{
 }
 #topics{
 	margin-top:10px;
+	border-bottom: 1px solid #DAE6EE;
+	padding-bottm: 2px;
 
 }
 #topics h2, #answer h2{
