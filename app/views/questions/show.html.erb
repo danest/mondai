@@ -63,7 +63,8 @@
 							<% if !current_user.nil? && answer.user.id == current_user.id %>
 								<p>
 									<%= link_to "Edit Response", answer_edit_path(answer) %>
-									<%= link_to "Delete Response", question_answer_path(@question,answer), :confirm => 'Are you sure?', :method => :delete %>
+									<%= link_to "Delete Response", question_answer_path(@question,answer),
+									 :confirm => 'Are you sure?', :method => :delete, :remote => true %>
 								</p>
 							<% end %>
 						</div>

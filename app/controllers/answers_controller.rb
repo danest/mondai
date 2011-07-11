@@ -26,7 +26,6 @@ class AnswersController < ApplicationController
   
   def update
     @answer = Answer.find(params[:id])
-
     respond_to do |format|
       if @answer.update_attributes(params[:answer])
         format.html { redirect_to(session[:return_to],
@@ -45,7 +44,7 @@ class AnswersController < ApplicationController
     @answer.destroy
     respond_to do |format|
       format.html { redirect_to(show_question_path(Question.find(params[:question_id]).normalized_name, params[:question_id],)) }
-      format.xml  { head :ok }
+      format.js
     end
   end
   
