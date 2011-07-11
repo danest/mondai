@@ -51,7 +51,7 @@
 			<div id="answers_container">
 				<div id="something">
 					<% @question.answers.each do |answer| %>
-					<div class="single_answer_container">
+					<div class="single_answer_container" id="answer_<%= answer.id %>">
 						<div class="user">
 							<%= image_tag answer.user.picture, :size => "25x25" %>
 						</div>
