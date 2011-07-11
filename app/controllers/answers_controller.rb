@@ -13,10 +13,13 @@ class AnswersController < ApplicationController
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new(params[:answer])
     @answer.user = current_user
-    if @answer.save
-      redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
-    else
-      render 'new'
+    respond_to do |format|
+      if @answer.save
+        format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
+        format.js
+      else
+        render 'new'
+      end
     end
   end
   

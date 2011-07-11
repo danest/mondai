@@ -51,35 +51,8 @@
 			<div id="answers_container">
 				<div id="something">
 					<% @question.answers.each do |answer| %>
-					<div class="single_answer_container" id="answer_<%= answer.id %>">
-						<div class="user">
-							<%= image_tag answer.user.picture, :size => "25x25" %>
-						</div>
-						<p class="user_name">
-							<%= answer.user.name %>
-						</p>
-						<div class="single_answer">
-							<%= raw sanitize(simple_format(answer.content, :class=> 'psafeanswer'), :tags => %w(strong em b i hr br ul ol li blockquote p) ) %>
-							<% if !current_user.nil? && answer.user.id == current_user.id %>
-								<p>
-									<%= link_to "Edit Response", answer_edit_path(answer) %>
-									<%= link_to "Delete Response", question_answer_path(@question,answer),
-									 :confirm => 'Are you sure?', :method => :delete, :remote => true %>
-								</p>
-							<% end %>
-						</div>
-						<div class="vote_container">	
-							<p class="vote_up">
-								<%= link_to image_tag("vote_up2.png"), question_answer_vote_up_path(@question, answer), :method => :put %>
-							</p>
-							<p class="vote_count"><%= answer.count %></p>
-							<p class="vote_down">
-								<%= link_to image_tag("vote_down2.png"), question_answer_vote_down_path(@question, answer), :method => :put %>
-							</p>
-						</div>
-						<div class="clear"></div>
-					</div><!-- .single_answer_container -->
-						<% end %>
+						<%= render :partial => answer %>
+					<% end %>
 				</div>
 			</div>
 		</div>
