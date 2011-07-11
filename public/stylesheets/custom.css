@@ -761,7 +761,7 @@ div.socialshare{
 	list-style:none;
 	margin-bottom:2px;
 }
-.all_topics li:hover{
+.all_topics li a:hover{
 	background-color:#DDDEDF;
 	border-radius:10px;
 }
