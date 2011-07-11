@@ -17,9 +17,9 @@
 	</div>
 	<div class="vote_container">	
 		<p class="vote_up">
-			<%= link_to image_tag("vote_up2.png"), question_answer_vote_up_path(@question, answer), :method => :put %>
+			<%= link_to image_tag("vote_up2.png"), question_answer_vote_up_path(@question, answer), :method => :put, :remote => true %>
 		</p>
-		<p class="vote_count"><%= answer.count %></p>
+		<p class="vote_count <%= answer.id %>"><%= answer.count %></p>
 		<p class="vote_down">
 			<%= link_to image_tag("vote_down2.png"), question_answer_vote_down_path(@question, answer), :method => :put %>
 		</p>

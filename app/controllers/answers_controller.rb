@@ -64,7 +64,10 @@ class AnswersController < ApplicationController
     @answer.count += 1
     if @answer.save
       flash[:notice] = "Thank you for voting"
-      redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
+      respond_to do |format|
+        format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
+        format.js
+      end
     else
       flash[:notice] = "Error Voting Please Try Again"
       redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
