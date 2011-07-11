@@ -763,7 +763,7 @@ div.socialshare{
 }
 .all_topics li:hover{
 	background-color:#DDDEDF;
-	border-radius:6px;
+	border-radius:10px;
 }
 .all_topics li a{
 	font-size:1.3em;
