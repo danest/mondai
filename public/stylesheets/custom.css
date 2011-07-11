@@ -751,6 +751,9 @@ div.socialshare{
 	margin-top:10px;
 	margin-bottom:10px;
 }
+#boxtopics{
+	padding-left:10px;
+}
 .all_topics{
 	float:none;
 }
@@ -764,7 +767,7 @@ div.socialshare{
 }
 .all_topics li a{
 	font-size:1.3em;
-	padding:1px;
+	padding:10px;
 }
 
 /**
