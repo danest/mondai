@@ -756,9 +756,15 @@ div.socialshare{
 }
 .all_topics li{
 	list-style:none;
+	margin-bottom:2px;
+}
+.all_topics li:hover{
+	background-color:#DDDEDF;
+	border-radius:6px;
 }
 .all_topics li a{
 	font-size:1.3em;
+	padding:1px;
 }
 
 /**
