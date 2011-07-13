@@ -639,6 +639,7 @@ label{
 	text-align:center;
 
 }
+
 #footer h1{
 	color:white;
 	opacity:1;
@@ -769,6 +770,65 @@ div.socialshare{
 	font-size:1.3em;
 	padding:10px;
 }
+
+/* Navigation */
+
+nav {
+  float: right;
+}
+
+nav {
+  background-color: white;
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+nav ul li a:visited {
+  color: #09c;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Round corners */
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+footerbt {
+  text-align: center;
+  margin-top: 10px;
+  width: 710px;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+}
+
+footerbt nav {
+  float: none;
+}
+
+
+
 
 /**
  * Non-semantic helper classes: please define your styles before this section.

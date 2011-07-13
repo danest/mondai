@@ -68,11 +68,22 @@
     <%= yield %>
  </div>
 </body>
-<div id="footer">
-	<br />
-	Footer stuff --- to do <br />
-	About | Contact | Twitter | Facebook | Binghamton University
-</div>
+<body>
+	
+</body>
+<body>
+  <footerbt>
+	<nav class="round">
+		<ul>
+			<li><%= link_to "About Mondai", about_path %></li>
+			<li><%= link_to "Contact us", contact_path %></li>
+			<li><a href="http://www2.binghamton.edu/">Binghamton University</a></li>
+			<li><a href="#">Follow us on Twitter</a></li>
+			<li><a href="#">Mondai on Facebook</a></li>
+		</ul>
+	</nav>
+  </footerbt>
+</body>
 </html>
 <script type="text/javascript">
   var uvOptions = {};
