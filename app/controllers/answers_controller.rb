@@ -78,6 +78,7 @@ class AnswersController < ApplicationController
      @answer = Answer.find(params[:answer_id])
       @answer.count -= 1
       if @answer.save
+        flash[:notice] = "Thank you for voting"
         respond_to do |format|
           format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
           format.js
