@@ -34,6 +34,4 @@ $(document).ready(function() {
 		});
 	});
 	$('.close').click(function(){$('#box').css("display", "none");$('#screen').css("display", "none")});
-	$('#flash_notice').delay(3000).fadeOut('slow');
-	$('#flash_errors').delay(3000).fadeOut('slow');
 });
