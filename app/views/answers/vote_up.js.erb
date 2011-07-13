@@ -1,2 +1,2 @@
 $("#vote_id_<%= @answer.id %>").html("<%= @answer.count %>");
-$("#flashes").html("<%= escape_javascript(flash(:notice) %>");
+$("#flashes").html('<div class="flash notice"><%= escape_javascript(flash.delete(:notice)) %></div>');
