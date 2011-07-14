@@ -640,7 +640,7 @@ label{
 
 }
 
-#footer h1{
+#middleAbout h1{
 	color:white;
 	opacity:1;
 	z-index:90;
@@ -823,7 +823,7 @@ nav ul li a:hover {
   position:relative;
 }
 
-#footert nav {
+#footer nav {
   float: none;
 }
 
