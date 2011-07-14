@@ -827,6 +827,15 @@ nav ul li a:hover {
   float: none;
 }
 
+#footer a{
+	text-decoration:none;
+	color:black;
+}
+
+#footer a:hover{
+	text-decoration:underline;
+}
+
 div.dialog {
   width: 43em;
   padding: 2em 4em;
