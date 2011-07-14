@@ -75,18 +75,18 @@ class AnswersController < ApplicationController
   end
   
   def vote_down
-     @answer = Answer.find(params[:answer_id])
-      @answer.count -= 1
-      if @answer.save
-        flash[:notice] = "Thank you for voting"
-        respond_to do |format|
-          format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
-          format.js
-        end
-      else
-        flash[:notice] = "Error Voting Please Try Again"
-        redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
+    @answer = Answer.find(params[:answer_id])
+    @answer.count -= 1
+    if @answer.save
+      flash[:notice] = "Thank you for voting"
+      respond_to do |format|
+        format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
+        format.js
       end
+    else
+      flash[:notice] = "Error Voting Please Try Again"
+      redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
+    end
   end 
   #Allowing admin to delete answer
   private
