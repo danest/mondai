@@ -816,7 +816,7 @@ nav ul li a:hover {
 
 footerbt {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 30px;
   width: 710px;
   margin-left: auto;
   margin-right: auto;
@@ -825,6 +825,15 @@ footerbt {
 
 footerbt nav {
   float: none;
+}
+
+div.dialog {
+  width: 43em;
+  padding: 2em 4em;
+  margin: 4em auto 0 auto;
+  border: 1px solid #ccc;
+  border-right-color: #999;
+  border-bottom-color: #999;
 }
 
 
