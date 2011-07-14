@@ -814,7 +814,7 @@ nav ul li a:hover {
   border-radius:         10px;
 }
 
-footerbt {
+#footer {
   text-align: center;
   margin-top: 30px;
   width: 710px;
@@ -823,7 +823,7 @@ footerbt {
   position:relative;
 }
 
-footerbt nav {
+#footert nav {
   float: none;
 }
 
