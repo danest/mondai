@@ -197,8 +197,7 @@ h2 {
 }
 
 #topbar{
-	height:39px;
-	padding-top:2px;
+	height:40px;
 	background-color:#19559b;
 	position: fixed;
 	top: 0;
@@ -302,7 +301,7 @@ h1 a.home:hover{
 }
 
 #topbar h1{
-	width:210px;
+	width:107px;
 	display:inline;
 	float:left;
 }
@@ -579,8 +578,9 @@ label{
 #learnmore{
 	background-color: #222;
 	display: inline-block;
-	padding: 5px 10px 6px;
+	padding:8px;
 	color: #fff;
+	font-size:1.3em;
 	text-decoration: none;
 	font-weight: bold;
 	line-height: 1;
@@ -603,12 +603,6 @@ label{
 #learnmore:active{
 	position:relative;
 	top: 1px;
-}
-#screen{
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: #000;
 }
 .mainpage{
 	width:100%;
@@ -698,8 +692,9 @@ a.logo{
 }
 a:hover.logo{
 	height:40px;
+	background-color:rgba(25,20,0,0.5);
 	background-position:0px 0px;
-	background: url('../images/mondai-hover.png') no-repeat;
+
 }
 
 a.social{
