@@ -31,26 +31,26 @@ $(document).ready(function() {
 		
 	}
 	
-	function loadMore(pageNo) {
-	  var url = '/questions/page/';
-	  $.get(url + pageNo, function(response) {
-	    $("#attach").append(response);
-	  });
-	}
-
-	$(document).ready(function() {
-	  var currPage = 1;
-	  $("a.next").live("click",function()  {
-	    loadMore(++currPage);
-	  });
-	});
-	
-	$(window).scroll(function(){
-	        if  ($(window).scrollTop() == $(document).height() - $(window).height()){
-				var currPage = 1;
-	            loadMore(++currPage);
-	        }
-	});
+	// function loadMore(pageNo) {
+	//   var url = '/questions/page/';
+	//   $.get(url + pageNo, function(response) {
+	//     $("#attach").append(response);
+	//   });
+	// }
+	// 
+	// $(document).ready(function() {
+	//   var currPage = 1;
+	//   $("a.next").live("click",function()  {
+	//     loadMore(++currPage);
+	//   });
+	// });
+	// 
+	// $(window).scroll(function(){
+	//         if  ($(window).scrollTop() == $(document).height() - $(window).height()){
+	// 			var currPage = 1;
+	//             loadMore(++currPage);
+	//         }
+	// });
 //     // put all your jQuery goodness in here.
 // 	$('.hsubmit').hide();
 // 	
