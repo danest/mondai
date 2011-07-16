@@ -49,7 +49,7 @@ def create
   end
   
   def show
-    @question = Question.find(params[:id])
+    @answer = Answer.find(params[:id])
     respond_to do |format|
         format.html # show.html.erb
         format.xml  { render :xml => @post }
