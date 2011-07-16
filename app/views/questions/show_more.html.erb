@@ -1,0 +1,11 @@
+<% @questions.each do |question| %>
+	<div class="question">
+		<div class="question_image">
+			<%= image_tag question.user.picture %>
+		</div>
+		<div class="question_content">
+			<%= link_to question.content, show_question_path(question.normalized_name, question) %><br />
+			<%= question.description %>
+		</div>
+	</div>
+<% end %>

@@ -488,7 +488,7 @@ div.question_image{
 	min-height:40px;
 }
 .single_answer_container{
-	margin-top:20px;
+	padding-top:10px;
 }
 .psafeanswer{
 	font: 13px/19px normal "Helvetica Neue",Helvetica,Arial, sans-serif;
@@ -688,7 +688,7 @@ label{
 .vote_container{
 	width:25px;
 	float:right;
-	margin-top:2px;
+	margin-top:-30px;
 	margin-right:-40px;
 }
 .social{
@@ -852,8 +852,36 @@ div.dialog {
   border-right-color: #999;
   border-bottom-color: #999;
 }
-
-
+#paginate{
+	width:600px;
+	text-align:center;
+	background-color:#afafaf;
+	border-radius:6px;
+}
+#paginate a.next{
+	background-color:#afafaf;
+	width:600px;
+	text-align:center;
+	font-size:2em;
+	display:block;
+	border-radius:6px;
+}
+#paginate a{
+	color:black;
+	text-decoration:none;
+	background-color:#afafaf;
+	width:600px;
+	text-align:center;
+	font-size:2em;
+	border-radius:6px;
+}
+#paginate a:hover{
+	text-decoration:underline;
+}
+#paginate a:active{
+	position:relative;
+	top:1px;
+}
 
 
 /**

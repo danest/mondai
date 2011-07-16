@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   def index
     if !!current_user
       #show news feed or popular questions
-      @questions = Question.all
+      @questions = Question.page(params[:page]).per(2)
       @topics = Topic.all  
       render :action => 'logged_in_user'
     else
@@ -15,7 +15,8 @@ class HomeController < ApplicationController
   end
 
   def show
-    @questions = Question.all  
+    #@questions = Question.all
+    redirect_to root_path  
   end
   
   def search

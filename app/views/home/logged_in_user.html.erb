@@ -14,6 +14,8 @@
 			</div>
 		</div><div class="clear"></div>	
 	<% end %>
+	<div id="attach">
+	</div>
 </div>
 	<div id="toprightbox">
 		<h2 id="boxtopics">Topics</h2>
@@ -27,4 +29,9 @@
 			</ul>
 		</div>
 	</div>
+	
 <div class="clear"></div>
+<div id="paginate">
+	<%= link_to "Load more", "#", :class => "next" %>
+</div>
+<%= paginate @questions %>

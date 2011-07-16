@@ -30,6 +30,20 @@ $(document).ready(function() {
 	default:
 		
 	}
+	
+	function loadMore(pageNo) {
+	  var url = '/questions/page/';
+	  $.get(url + pageNo, function(response) {
+	    $("#attach").append(response);
+	  });
+	}
+
+	$(document).ready(function() {
+	  var currPage = 1;
+	  $("a.next").click(function() {
+	    loadMore(++currPage);
+	  });
+	});
 //     // put all your jQuery goodness in here.
 // 	$('.hsubmit').hide();
 // 	

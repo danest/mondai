@@ -55,6 +55,8 @@ GEM
     jquery-rails (1.0.12)
       railties (~> 3.0)
       thor (~> 0.14)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -160,6 +162,7 @@ DEPENDENCIES
   devise
   heroku
   jquery-rails (>= 1.0.3)
+  kaminari
   oa-oauth
   omniauth
   rails (= 3.0.7)

@@ -56,6 +56,11 @@ class QuestionsController < ApplicationController
     end
   end
   
+  def show_more
+    @questions = Question.page(params[:page]).per(2)
+    render :layout => false
+  end
+  
   
   
   #Allowing admin to delete question
