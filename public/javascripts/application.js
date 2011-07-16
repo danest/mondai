@@ -40,9 +40,16 @@ $(document).ready(function() {
 
 	$(document).ready(function() {
 	  var currPage = 1;
-	  $("a.next").click(function() {
+	  $("a.next").live("click",function()  {
 	    loadMore(++currPage);
 	  });
+	});
+	
+	$(window).scroll(function(){
+	        if  ($(window).scrollTop() == $(document).height() - $(window).height()){
+				var currPage = 1;
+	            loadMore(++currPage);
+	        }
 	});
 //     // put all your jQuery goodness in here.
 // 	$('.hsubmit').hide();
