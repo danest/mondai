@@ -349,6 +349,7 @@ h3{
 }
 #return{
 	color:white;
+	margin-top: 4px;
 }
 
 ul#topnav{
@@ -363,12 +364,13 @@ ul#toplinks{
 	list-style:none;
 	display:inline;
 	float:right;
+	margin-top: 7px;
 }
 
 ul#topnav li{
 	margin-right:15px;
 	float:left;
-	margin-top: 2px;
+	margin-top: 3px;
 }
 ul#toplinks li{
 	margin-right:15px;
@@ -579,7 +581,7 @@ label{
 #learnmore{
 	background-color: #222;
 	display: inline-block;
-	padding:8px;
+	padding:5px;
 	color: #fff;
 	font-size:1.3em;
 	text-decoration: none;
