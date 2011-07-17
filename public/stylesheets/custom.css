@@ -858,22 +858,10 @@ div.dialog {
 	background-color:#afafaf;
 	border-radius:6px;
 }
-#paginate a.next{
-	background-color:#afafaf;
-	width:600px;
-	text-align:center;
-	font-size:2em;
-	display:block;
-	border-radius:6px;
-}
+
 #paginate a{
 	color:black;
 	text-decoration:none;
-	background-color:#afafaf;
-	width:600px;
-	text-align:center;
-	font-size:2em;
-	border-radius:6px;
 }
 #paginate a:hover{
 	text-decoration:underline;

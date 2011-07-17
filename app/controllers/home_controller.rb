@@ -20,6 +20,6 @@ class HomeController < ApplicationController
   end
   
   def search
-    @questions = Question.search(params[:search])
+    @questions = Question.search(params[:search]).page(params[:page]).per(10)
   end
 end

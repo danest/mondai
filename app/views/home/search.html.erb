@@ -1,11 +1,25 @@
+<br />
 <% if @questions.blank? %>
 	<p>
 		Sorry nothing found yet. We are working on improving search
 	</p>
 	<% else %>
+		<p>
+			These are your results.
+		</p>
 		<% @questions.each do |question| %>
-			<li>
-				<%= question.content %>	
-			</li>
+			<div class="question">
+				<div class="question_image">
+					<%= image_tag question.user.picture %>
+				</div>
+				<div class="question_content">
+					<%= link_to question.content, show_question_path(question.normalized_name, question) %><br />
+					<%= question.description %>
+				</div>
+			</div><div class="clear"></div>	
 		<% end %>
 <% end %>
+<div id="paginate">
+	<%# link_to "Load more", "#", :class => "next" %>
+	<%= paginate @questions %>
+</div><div class="clear"></div>
