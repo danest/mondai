@@ -70,6 +70,8 @@ class User < ActiveRecord::Base
   def feed
     # followed user
     Question.from_users_followed_by(self)
+    # followed question
+    Question.from_questions_followed_by(self)
   end
   
 end
