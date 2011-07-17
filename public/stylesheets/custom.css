@@ -775,8 +775,13 @@ div.socialshare{
 	border-radius:10px;
 }
 .all_topics li a{
-	font-size:1.3em;
-	padding:10px;
+	font-size:1.1em;
+	padding:3px 6px;
+	display: block;
+	color: #999;
+}
+.all_topics li a:hover{
+	color: #666666;
 }
 
 /* Navigation */
