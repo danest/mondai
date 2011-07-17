@@ -11,7 +11,7 @@
 
 class Topic < ActiveRecord::Base
   
-  validates_uniqueness_of :name, :uniqueness => { :case_sensitive => false }
+  validates_uniqueness_of :name, :case_sensitive => false
   has_many :enrollments
   has_many :questions, :through => :enrollments
   attr_accessible :name

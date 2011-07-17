@@ -1,7 +1,7 @@
 class CreateTopics < ActiveRecord::Migration
   def self.up
     create_table :topics do |t|
-      t.string :name, :uniq => true
+      t.string :name
 
       t.timestamps
     end
