@@ -10,6 +10,16 @@ class Question < ActiveRecord::Base
     "#{self.id}-#{normalized_name}"
   end
   
+  #Return Question that is belongs to the followed user to show in the current user profile page
+  scope :from_users_followed_by, lamda { |user| user_followed_by(user)}
+  
+  private
+    #Return an SQL condition statement for users followed by current user
+    def self.user_followed_by(user)
+      user_following_ids = %(SELECT user_followed_id FROM user_relationship WHERE user_follower_id = :user_id)
+      where("user_id IN (#{user_following_ids}) OR user_id = :user_id", {:user_id => user})
+    end
+  
 end
 
 # == Schema Information

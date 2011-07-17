@@ -20,6 +20,37 @@ class User < ActiveRecord::Base
   has_many :questions, :dependent => :destroy
   has_many :answers, :dependent => :destroy
   
+  # User Relationship model
+  has_many :user_relationship, :foreign_key => "user_follower_id", 
+                                :dependent => :destroy
+  has_many :user_following, :through => :user_relationship, :source => :user_followed
+  
+  has_many :user_reverse_relationship, :foreign_key => "user_followed_id",
+                                      :class_name => "UserRelationship",
+                                      :dependent => :destroy
+  has_many :user_followers, :through => :user_reverse_relationship
+  
+  def user_following?(user_followed)
+    user_relationship.find_by_user_followed_id(user_followed)
+  end
+  
+  def follow_user!(user_followed)
+    user_relationship.create!(:user_followed_id => user_followed.id)
+  end
+  
+  def unfollow_user!(user_followed)
+    user_relationship.find_by_user_followed_id(user_followed).destroy
+  end
+  
+  # Question Relationship model
+  
+ 
+  # Need to add followed topic, followed user, followed questions question and own question
+  def feed
+    # followed user
+    Question.from_users_followed_by(self)
+  end
+  
 end
 
 
