@@ -38,9 +38,22 @@
 				<% end %>
 			</ul>
 			<% else %>
-				<ul id="topnav">
+				<ul id="topnavmore">
 					<li id="learnmore"><%= link_to "Learn More", about_path %></li>
 				</ul>
+				<div class="socialsharenav">
+					<ul id="socialshare">
+						<li>
+							<div id="fb-root"></div><fb:like href="" send="true" layout="button_count" width="100" show_faces="false" font="lucida grande"></fb:like>
+						</li>
+						<li class="gplus">
+							<g:plusone size="medium"></g:plusone>	
+						</li>
+						<li class="twitter">
+							<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>
+						</li>
+					</ul>
+				</div>
 				<ul id="toplinks">
 					<li>
 						<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class=> "ir social" %>
