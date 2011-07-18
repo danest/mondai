@@ -19,7 +19,7 @@ Mondai::Application.routes.draw do
   get 'answers/edit/:id' => 'answers#edit', :as => 'answer_edit'
   put 'answers/edit/:id' => 'answers#update', :as => 'answer_edit'
   
-  match '/contact', :to => 'pages#contact'
+  match '/tos', :to => 'pages#tos'
   match '/about', :to => 'pages#about'
   
   # The priority is based upon order of creation:
