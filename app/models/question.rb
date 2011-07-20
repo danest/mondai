@@ -27,7 +27,7 @@ class Question < ActiveRecord::Base
     if @topic_names
       #assign the correct associations in our model
       #allow for comma separated
-      self.topics = @topic_names.split(/[,]+/).map do |name|
+      self.topics = @topic_names.split(/,\s*/).map do |name|
         name = name.gsub('.', '').gsub(/[^a-zA-Z0-9\s\_\-\.]/, '').strip.downcase
         Topic.find_or_create_by_name(name)
       end
