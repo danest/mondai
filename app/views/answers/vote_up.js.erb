@@ -1,3 +1,5 @@
 $("#vote_id_<%= @answer.id %>").html("<%= @answer.total_sum %>");
 $("#flashes").html('<div class="flash notice" id="flash_notice"><%= escape_javascript(flash.delete(:notice)) %></div>');
 $('#flash_notice').delay(3000).fadeOut('slow');
+sortList();
+$("#answer_<%= @answer.id %>").effect("highlight", {}, 3000);
