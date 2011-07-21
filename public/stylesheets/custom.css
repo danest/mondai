@@ -492,6 +492,7 @@ div.question_image{
 }
 .psafeanswer{
 	font: 13px/19px normal "Helvetica Neue",Helvetica,Arial, sans-serif;
+	margin-bottom: 2px;
 }
 #q_description{
 	font: 14px/18px normal garamond, sans-serif;
