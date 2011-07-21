@@ -61,35 +61,60 @@ class AnswersController < ApplicationController
   
   def vote_up
     @answer = Answer.find(params[:answer_id])
-    @answer.count += 1
-    if @answer.save
+    if vote(:for, current_user, @answer)
       flash[:notice] = "Thank you for voting"
       respond_to do |format|
         format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
         format.js
       end
     else
-      flash[:notice] = "Error Voting Please Try Again"
-      redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
+      flash[:notice] = "Your vote has already been registered"
+      respond_to do |format|
+        format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
+        format.js
+      end
     end
   end
   
   def vote_down
     @answer = Answer.find(params[:answer_id])
-    @answer.count -= 1
-    if @answer.save
+    if vote(:against, current_user, @answer)
       flash[:notice] = "Thank you for voting"
       respond_to do |format|
         format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
         format.js
       end
     else
-      flash[:notice] = "Error Voting Please Try Again"
-      redirect_to show_question_path(@answer.question.normalized_name,@answer.question)
+      flash[:notice] = "Your vote has already been registered"
+      respond_to do |format|
+        format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
+        format.js
+      end
     end
-  end 
+  end
+   
   #Allowing admin to delete answer
   private
+    def vote(value, user, answer)
+      new_vote = false
+      #find vote for this instance by the given user OR create a new one
+      vote = answer.votes.where(:user_id => user).first || answer.votes.build(:user_id => user)
+
+      if value == :for
+        vote_value = 1
+      elsif value == :against
+        vote_value = -1
+      end
+
+      if vote.value != vote_value
+        vote.value = vote_value
+        vote.save
+        new_vote = true
+      end
+      
+      return new_vote
+    end
+    
     def authorized_user
       @answer = Answer.find(params[:id])
       redirect_to root_path unless current_user?(@answer.user)

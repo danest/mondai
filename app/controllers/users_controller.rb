@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :store_location
   def new
   end
   

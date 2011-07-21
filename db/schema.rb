@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110722144148) do
+ActiveRecord::Schema.define(:version => 20110722144150) do
 
   create_table "answers", :force => true do |t|
     t.text     "content"
@@ -94,9 +94,22 @@ ActiveRecord::Schema.define(:version => 20110722144148) do
     t.string   "uid"
     t.string   "picture"
     t.string   "fb_link"
+    t.text     "description"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "votes", :force => true do |t|
+    t.integer  "value"
+    t.integer  "answer_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["answer_id", "user_id"], :name => "index_votes_on_answer_id_and_user_id", :unique => true
+  add_index "votes", ["answer_id"], :name => "index_votes_on_answer_id"
+  add_index "votes", ["user_id"], :name => "index_votes_on_user_id"
 
 end

@@ -1,15 +1,5 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  name: MyString
-  email: MyString
-
-two:
-  name: MyString
-  email: MyString
-
-
 # == Schema Information
+# Schema version: 20110722144150
 #
 # Table name: users
 #
@@ -29,5 +19,17 @@ two:
 #  uid                  :string(255)
 #  picture              :string(255)
 #  fb_link              :string(255)
+#  description          :text
 #
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+
+two:
+  name: MyString
+  email: MyString
+
 

@@ -1,0 +1,24 @@
+# == Schema Information
+# Schema version: 20110722144150
+#
+# Table name: votes
+#
+#  id         :integer         not null, primary key
+#  value      :integer
+#  answer_id  :integer
+#  user_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  value: 1
+  answer: 
+  user: 
+
+two:
+  value: 1
+  answer: 
+  user: 

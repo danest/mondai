@@ -69,7 +69,7 @@
 	</div><!-- #question_container -->
 	<div id="toprightbox">
 		<p>
-			Question Owner
+			<h3>Question Owner</h3>
 		</p>
 		<div id="profileimage">
 			<%= image_tag @question.user.picture %>
@@ -79,7 +79,7 @@
 				<%= @question.user.name %>
 			</p>
 			<p>
-				A short blurb about them. Something that they are interested in and other stuff.
+				<%= @question.user.description %>
 			</p>
 		</div>
 	</div>

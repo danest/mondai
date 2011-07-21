@@ -19,7 +19,14 @@
 		<p class="vote_up">
 			<%= link_to image_tag("vote_up2.png"), question_answer_vote_up_path(@question, answer), :method => :put, :remote => true %>
 		</p>
-		<p class="vote_count" id="vote_id_<%= answer.id %>"><%= answer.count %></p>
+		<p class="vote_count" id="vote_id_<%= answer.id %>">
+			<!-- <% x = 0 %>
+			<% answer.votes.each do |vote|  %>
+			<% x =+ vote.value %>
+			<% end %>
+			<%= x %> -->
+			<%= answer.total_sum %>
+		</p>
 		<p class="vote_down">
 			<%= link_to image_tag("vote_down2.png"), question_answer_vote_down_path(@question, answer), :method => :put, :remote => true %>
 		</p>
