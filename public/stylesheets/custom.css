@@ -800,11 +800,11 @@ div.socialshare{
 /* Navigation */
 
 nav {
-  float: right;
+  float: left;
 }
 
 nav {
-  background-color: white;
+  background: rgba(255, 255, 255, 0.8);
   padding: 0 0.7em;
   white-space: nowrap;
 }
@@ -835,9 +835,9 @@ nav ul li a:hover {
 
 /* Round corners */
 .round {
-  -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
-  border-radius:         10px;
+  -moz-border-radius:    5px;
+  -webkit-border-radius: 5px;
+  border-radius:         5px;
 }
 
 #footer {
