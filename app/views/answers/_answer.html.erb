@@ -6,7 +6,7 @@
 		<%= answer.user.name %>
 	</p>
 	<div class="single_answer">
-		<%= raw sanitize(simple_format(answer.content, :class=> 'psafeanswer'), :tags => %w(strong em b i hr br ul ol li blockquote p) ) %>
+		<%= raw sanitize(auto_link(simple_format(answer.content, :class=> 'psafeanswer'), :tags => %w(strong em b i hr br ul ol li blockquote p) )) %>
 		<% if !current_user.nil? && answer.user.id == current_user.id %>
 			<p>
 				<%= link_to "Edit Response", answer_edit_path(answer) %>
