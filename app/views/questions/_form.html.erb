@@ -12,11 +12,11 @@
 	  </div>
 	  <% end %>
 		<%= f.label "Question:" %><br />
-		<%= f.text_field :content, :size => "33px" %><br />
+		<%= f.text_field :content, :size => "48px" %><br />
 		<%= f.label "Description (Optional):" %><br />
 		<%= f.text_area :description, :size => "50x10", :placeholder => 'Provide more details about your question' %><br />
 		<%= f.label "Question Topics:" %><br />
-		<%= f.text_field :topic_names, :size => "33px", :placeholder => 'Binghamton, Downtown, Math, Teachers, etc',:id => :topics %><br />
-		<%= add_button_tag "Post Question" %><br />
+		<%= f.text_field :topic_names, :size => "48px", :placeholder => 'Binghamton, Downtown, Math, Teachers, etc',:id => :topics %><br />
+		<%= add_button_tag "Post Question", :id=>"qb" %><br />
 	<% end %>
 </div>
