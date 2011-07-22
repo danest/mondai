@@ -11,8 +11,11 @@
 #
 
 class QRelationship < ActiveRecord::Base
-  attr_accessible :question_followed_id
+  attr_accessible :q_followed_id
   
   belongs_to :question_follower, :class_name => "User"
   belongs_to :question_followed, :class_name => "Question"
+  
+  validates :q_followed_id, :presence => true
+  validates :q_follower_id, :presence => true
 end

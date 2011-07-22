@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  t_follower_id: 1
+  t_followed: MyString
+
+two:
+  t_follower_id: 1
+  t_followed: MyString

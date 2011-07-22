@@ -41,8 +41,9 @@ class Question < ActiveRecord::Base
   end
   
   #Return Question that is belongs to the followed user to show in the current user profile page
-  #scope :from_users_followed_by, lamda { |user| user_followed_by(user) }
-  #scope :from_questions_followed_by, lamda { |question| question_followed_by(user) }
+  scope :from_users_followed_by, lambda { |user| user_followed_by(user) }
+  scope :from_questions_followed_by, lambda { |question| question_followed_by(user) }
+  scope :from_topic_followed_by, lambda { |topic| topic_followed_by(user)}
   
   private
     #Return an SQL condition statement for users followed by current user
@@ -54,6 +55,11 @@ class Question < ActiveRecord::Base
     def self.question_followed_by(user)
       q_following_ids = %(SELECT q_followed_id FROM q_relationship WHERE q_follower_id = :user_id)
       where("user_id IN (#{q_following_ids}) OR user_id = :user_id", {:user_id => user})
+    end
+    
+    def self.topic_followed_by(user)
+      t_following_name = %(SELECT t_followed FROM t_relationship WHERE t_follower_id = :user_id)
+      where("user_id IN (#{t_following_ids}) OR user_id = :user_id", {:user_id => user})
     end
     
 

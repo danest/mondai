@@ -32,18 +32,18 @@ class User < ActiveRecord::Base
   
   # Method helper for User Relationship model
   def user_following?(user_followed)
-    user_relationship.find_by_user_followed_id(user_followed)
+    u_relationship.find_by_u_followed_id(user_followed)
   end
   
   def follow_user!(user_followed)
-    user_relationship.create!(:u_followed_id => user_followed.id)
+    u_relationship.create!(:u_followed_id => user_followed.id)
   end
   
   def unfollow_user!(user_followed)
-    user_relationship.find_by_user_followed_id(user_followed).destroy
+    u_relationship.find_by_u_followed_id(user_followed).destroy
   end
   
-  # Question Relationship model
+  # Question Relationship Model
   has_many :question_relationship, :foreign_key => "q_follower_id",
                                    :dependent => :destroy
   has_many :question_following, :through => :q_relationship, :source => :question_followed
@@ -54,18 +54,37 @@ class User < ActiveRecord::Base
   
   # Method helper for Question Relationship model
   def question_following?(question_followed)
-    question_relationship.find_by_question_followed_id(question_followed)
+    q_relationship.find_by_q_followed_id(question_followed)
   end
   
   def follow_question!(question_followed)
-    question_relationship.create!(:question_followed_id => question_followed.id)
+    q_relationship.create!(:q_followed_id => question_followed.id)
   end
   
   def unfollow_question!(question_followed)
-    question_relationship.find_by_question_followed_id(question_followed).destroy
+    q_relationship.find_by_q_followed_id(question_followed).destroy
   end
                                           
- 
+  # Topic Relationship Model
+  has_many :topic_relationship, :foreign_key => "t_follower_id",
+                                :dependent => :destroy
+  has_many :topic_following, :through => :t_relationship, :source => :topic_name
+  
+  # Don't have any reverse relationship. A topic can't follow a user (Maybe change later)
+  
+  # Method helper for Topic Relationship Model
+  def topic_following?(topic_name)
+    t_relationship.find_by_t_followed(topic_name)
+  end
+  
+  def follow_topic!(topic_name)
+    t_relationship.create!(:t_followed => topic_name)
+  end
+  
+  def unfollow_topic!(topic_name)
+    t_relationship.find_by_t_followed(topic_name).destroy
+  end
+  
   # Need to add followed topic, followed user, followed questions question and own question
   def feed_user
     # followed user
@@ -75,7 +94,9 @@ class User < ActiveRecord::Base
     # followed question
     Question.from_questions_followed_by(self)
   end
-  
+  def feed_topic
+    Question.from_topics_followed_by(self)
+  end
 end
 
 
