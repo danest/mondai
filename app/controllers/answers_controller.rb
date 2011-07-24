@@ -98,7 +98,7 @@ class AnswersController < ApplicationController
     def vote(value, user, answer)
       new_vote = false
       #find vote for this instance by the given user OR create a new one
-      vote = answer.votes.where(:user_id => user).first || answer.votes.build(:user_id => user)
+      vote = answer.votes.where(:user_id => current_user.id).first || answer.votes.create(:user_id => current_user.id)
 
       if value == :for
         vote_value = 1

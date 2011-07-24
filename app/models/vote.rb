@@ -15,4 +15,9 @@ class Vote < ActiveRecord::Base
   belongs_to :answer
   belongs_to :user
   attr_accessible :answer_id, :user_id
+  
+  def total_sum
+    self.sum(:value)
+  end
+  validates_uniqueness_of :user_id, :scope => :answer_id
 end

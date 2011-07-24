@@ -10,6 +10,7 @@ gem "rake", "0.8.7"
 # Use unicorn as the web server
 # gem 'unicorn'
 gem 'devise'
+gem 'redis'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "omniauth"
 gem 'css3buttons'

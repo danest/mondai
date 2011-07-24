@@ -9,8 +9,8 @@ class Answer < ActiveRecord::Base
   end
 
   #validates :content, :presence => true
-  default_scope :include => :votes
-  default_scope :order => 'votes.value DESC'
+  #default_scope :include => :votes
+  #default_scope where(:order => 'votes.values DESC')
 end
 
 
