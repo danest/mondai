@@ -11,6 +11,8 @@ gem "rake", "0.8.7"
 # gem 'unicorn'
 gem 'devise'
 gem 'redis'
+gem 'resque', :require => "resque/server"
+
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "omniauth"
 gem 'css3buttons'
