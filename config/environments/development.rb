@@ -1,6 +1,6 @@
 Mondai::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-
+  ENV["REDISTOGO_URL"] = "redis://redistogo:b99859dd8742c5cdcf23242a6f1bfd55@angler.redistogo.com:9000/"
   # In the development environment your application's code is reloaded on
   # every request.  This slows down response time but is perfect for development
   # since you don't have to restart the webserver when you make code changes.
