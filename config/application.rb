@@ -16,6 +16,7 @@ module Mondai
     # config.autoload_paths += %W(#{config.root}/extras)
     config.action_mailer.delivery_method   = :postmark
     config.action_mailer.postmark_settings = { :api_key => "22cf0ab9-a47a-4895-a5f1-0664cdbc4251" }
+    config.postmark_signature              = "team@mondai.me"
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
