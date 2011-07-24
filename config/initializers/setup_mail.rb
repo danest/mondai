@@ -8,4 +8,4 @@ ActionMailer::Base.smtp_settings = {
   :enable_starttls_auto => true
 }
 
-ActionMailer::Base.default_url_options[:host] = "mondai.me"
+ActionMailer::Base.default_url_options[:host] = "www.mondai.me"
