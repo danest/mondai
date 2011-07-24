@@ -17,6 +17,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       #redirect_to new_user_registration_url
       User.create!(:name => user_name, :email => user_email, :picture => picture_url, :fb_link => facebook_url, :uid => facebook_uid, :password => Devise.friendly_token[0,20])
       user = User.find_by_uid(env["omniauth.auth"]['uid'])
+      #send mail to the user
+      UserMailer.registration_confirmation(user.id).deliver
       sign_in_and_redirect user, :event => :authentication
     end
     #render :text => request.env['omniauth.auth'].to_yaml
