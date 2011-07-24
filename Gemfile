@@ -13,6 +13,7 @@ gem 'devise'
 gem 'redis'
 gem 'resque', :require => "resque/server"
 gem 'resque_mailer'
+gem 'postmark-rails'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "omniauth"
 gem 'css3buttons'
