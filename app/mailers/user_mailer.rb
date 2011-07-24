@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
   include Resque::Mailer
-  default :from => "mondai@gmail.com"
+  default :from => "mondai.team@gmail.com"
   
   def registration_confirmation(user_id)
     @user = User.find(user_id)
