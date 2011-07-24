@@ -4,6 +4,6 @@ class UserMailer < ActionMailer::Base
   
   def registration_confirmation(user_id)
     @user = User.find(user_id)
-    mail(:to => @user.email, :subject => "Registered")
+    mail(:to => @user.email, :subject => "Welcome To Mondai.Me")
   end
 end
