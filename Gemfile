@@ -12,7 +12,7 @@ gem "rake", "0.8.7"
 gem 'devise'
 gem 'redis'
 gem 'resque', :require => "resque/server"
-
+gem 'resque_mailer'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem "omniauth"
 gem 'css3buttons'

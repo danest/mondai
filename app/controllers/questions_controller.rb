@@ -13,6 +13,7 @@ class QuestionsController < ApplicationController
   def create
     @question = current_user.questions.create(params[:question])
     if @question.save
+      UserMailer.registration_confirmation(@user).deliver
       redirect_to show_question_path(@question.normalized_name, @question)
     else
       render 'new'
