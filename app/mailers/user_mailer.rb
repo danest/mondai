@@ -4,6 +4,6 @@ class UserMailer < ActionMailer::Base
   
   def registration_confirmation(user_id)
     @user = User.find(user_id)
-    mail(:to => "#{current_user.name} <#{current_user.email}>", :subject => "Registered")
+    mail(:to => current_user.email, :subject => "Registered")
   end
 end
