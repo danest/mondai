@@ -62,6 +62,8 @@ class AnswersController < ApplicationController
   def vote_up
     @answer = Answer.find(params[:answer_id])
     if vote(:for, current_user, @answer)
+      @answer.update_attributes(:count => (@answer.count+=1)) 
+      #@answer.save
       flash[:notice] = "Thank you for voting"
       respond_to do |format|
         format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
@@ -80,6 +82,7 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:answer_id])
     if vote(:against, current_user, @answer)
       flash[:notice] = "Thank you for voting"
+      @answer.update_attributes(:count => (@answer.count-=1)) 
       respond_to do |format|
         format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
         format.js
