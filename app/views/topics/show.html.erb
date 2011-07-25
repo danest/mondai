@@ -2,7 +2,7 @@
 	<div id="askquestion">
 		<%= add_button_link_to "Ask A Question On This Topic" , new_question_path %>
 	</div>
-	<h1><%= @topic.name %> Questions</h1>
+	<h1><%= @topic.name.titleize %> Questions</h1>
 	<% @topic.questions.each do |question| %>
 		<div class="question">
 			<div class="question_image">

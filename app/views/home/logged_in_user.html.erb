@@ -23,7 +23,7 @@
 			<ul class ="all_topics">
 				<% @topics.each do |topic|%>
 					<li>
-						<%= link_to topic.name, show_topic_path(topic.name, topic) %>
+						<%= link_to topic.name.titleize, show_topic_path(topic.name, topic) %>
 					</li>
 				<% end %>
 			</ul>
