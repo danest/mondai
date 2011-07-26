@@ -617,7 +617,7 @@ label{
 }
 
 #bigimage{
-	background: url(http://i.imgur.com/rerpP.jpg) no-repeat fixed center;
+	background: url() no-repeat fixed center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

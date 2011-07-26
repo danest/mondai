@@ -22,7 +22,8 @@ $(document).ready(function() {
 	  $("#bigimage").css("backgroundImage", 'url(http://www2.binghamton.edu/photos/images/20110507_rugby036_jwc.jpg)');
 	  break;
 	default:
-		
+		$("#bigimage").css("backgroundImage", 'url(http://i.imgur.com/rerpP.jpg)');
+	    break;
 	}
 	
 	var availableTags = [
