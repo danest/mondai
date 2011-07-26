@@ -10,7 +10,7 @@ class Answer < ActiveRecord::Base
 
   #validates :content, :presence => true
   #default_scope :include => :votes
-  default_scope where(:order => 'count DESC')
+  default_scope :order => 'count DESC'
 end
 
 
