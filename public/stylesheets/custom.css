@@ -921,6 +921,16 @@ div.dialog {
   border-right-color: #999;
   border-bottom-color: #999;
 }
+
+div.dialog2 a{
+	font-weight:normal;
+	color:white;
+	text-decoration:none;
+}
+
+div.dialog2 a:visited{
+	color:white;
+}
 #paginate{
 	width:600px;
 	text-align:center;
