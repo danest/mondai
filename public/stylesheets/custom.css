@@ -639,7 +639,7 @@ label{
 	width:450px;
 	height:200px;
 	left:51.75%;
-	margin:-125px 0 0 -250px;
+	margin:-200px 0 0 -250px;
 	padding:30px 10px 0;
 	top:50%;
 	z-index:99;
@@ -652,7 +652,7 @@ label{
 #middleAbout h1{
 	font-family:'Helvetica';font-size:25px;
 	font-weight:bold!important;
-	margin:5px 0 10px!important;
+	margin:5px 0px !important;
 	padding:0!important;
 	width:100%;	
 	color:#fff!important;
@@ -668,7 +668,7 @@ label{
 #middleAbout p{
 	color:#fff!important;
 	font-size:10px;
-	margin:30px 0 0!important;
+	margin:15px 0 0!important;
 }
 #footersignin{
 	padding:10px;
