@@ -2,9 +2,13 @@
 	#footer{
 		margin-top:270px;
 	}
-</style>
-<div id="bigimage">
+	body {
+        overflow: hidden;
+	}
 
+</style>
+<body>
+<div id="bigimage">
 </div>
 <div id="middleAbout">
 	<div id="header">
@@ -14,12 +18,13 @@
 		<div id="footersignin">
 			<h2>Sign in to join our private beta with your facebook</h2>
 			<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class=> "ir social" %>
-			<p>Question Your Campus and Get Insight Answers!</p>
+			<p>Question Your Campus!</p>
 		</div><!-- #footersignin -->
 	</div>
 </div><div class="clear"></div>
 <div class="clear"></div>
 </div>
+</body>
 <script src="http://connect.facebook.net/en_US/all.js#appId=233421873346550&amp;xfbml=1"></script>
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
