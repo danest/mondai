@@ -650,33 +650,37 @@ label{
 }
 
 #middleAbout h1{
-	font-family:'Helvetica';font-size:25px;
-	font-weight:bold!important;
-	margin:5px 0px !important;
-	padding:0!important;
+	font-family:Helvetica,Georgia, serif;
+	font-size:25px;
+	font-weight:bold;
+	margin:5px 0px ;
+	padding:0 ;
 	width:100%;	
-	color:#fff!important;
+	color:#fff;
 	opacity:1;
 	z-index:90;
 	line-height:1.1em;
 }
 #middleAbout h2{
-	color:#fff!important;
+	color:#fff;
 	font-size:12px;
 	margin:10px 0;
 }
 #middleAbout p{
-	color:#fff!important;
-	font-size:10px;
-	margin:15px 0 0!important;
+	color:#fff;
+	font-size:12px;
+	margin:15px 0 0;
 }
 #footersignin{
-	padding:10px;
+	padding:5px 10px 10px 10px;
 	width:350px;
 	float:left;
 	color:white;
 	text-align:center;
 	font:helvetica;
+}
+#footersignin h2{
+	font-size:14px;
 }
 #footersignin a{
 	margin-top:5px;
