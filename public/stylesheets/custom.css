@@ -895,11 +895,13 @@ nav ul li a:hover {
 
 #footer2 nav {
   float: none;
+  background-color:white;
+
 }
 
 #footer2 a{
 	text-decoration:none;
-	color:white;
+	color:black;
 }
 
 #footer2 a:hover{
