@@ -18,9 +18,7 @@ class ApplicationController < ActionController::Base
   def ensure_domain 
       url = request.url
       if url.include?('www.mondai.me')
-          puts 'it matched'
-          puts url
-          url = url.gsub!('www.mondai.com', 'mondai.me')
+          url = url.gsub('www.mondai.com', 'mondai.me')
           puts url
       end
   end
