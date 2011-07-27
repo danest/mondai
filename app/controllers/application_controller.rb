@@ -16,10 +16,10 @@ class ApplicationController < ActionController::Base
   end
   
   def ensure_domain 
-      url = request.url
-      if url.include?('www.mondai.me')
-          url = url.gsub(/^www.mondai.me/, 'mondai.me')
-          puts url
+      something = request.url
+      if something.include?('www.mondai.me')
+          tt = url.gsub(/^www.mondai.me/, 'mondai.me')
+          puts tt
       end
   end
   private
