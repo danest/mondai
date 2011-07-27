@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :ensure_domain
   include SessionsHelper
 
   # Customize the Devise after_sign_in_path_for() for redirecct to previous page after login
@@ -14,7 +15,10 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  
+  def ensure_domain 
+      url = request.url
+      puts url
+  end
   private
     def store_location
       session[:return_to] = request.fullpath
