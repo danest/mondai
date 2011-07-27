@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def ensure_domain 
       something = request.url
       if something.include?('www.mondai.me')
-          tt = url.gsub(/^www.mondai.me/, 'mondai.me')
+          tt = something.gsub(/^www.mondai.me/, 'mondai.me')
           puts tt
       end
   end
