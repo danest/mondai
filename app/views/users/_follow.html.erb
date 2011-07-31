@@ -1,0 +1,6 @@
+<%= form_for current_user.u_relationships.build(:u_followed_id => @user.id),
+			:remote => true do |f| %>
+	<div><%= f.hidden_field :u_followed_id %></div>
+	<div class="actions"><%= f.submit "Follow"%></div>
+<% end %>
+

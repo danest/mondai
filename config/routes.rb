@@ -12,7 +12,8 @@ Mondai::Application.routes.draw do
   match '/:name/:id' => 'questions#show', :as => "show_question"
   get 'users/new'
   get 'users/show'
-
+  resources :u_relationships, :only => [:create, :destroy]
+  resources :q_relationships, :only => [:create, :destroy]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
