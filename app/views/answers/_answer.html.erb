@@ -8,7 +8,7 @@
 	<div class="single_answer">
 		<%= raw sanitize(auto_link(simple_format(answer.content, :class=> 'psafeanswer'), :tags => %w(strong em b i hr br ul ol li blockquote p) )) %>
 		<% if !current_user.nil? && answer.user.id == current_user.id %>
-			<p>
+			<p class="change_response>
 				<%= link_to "Edit Response", answer_edit_path(answer) %>
 				<%= link_to "Delete Response", question_answer_path(@question,answer),
 				 :confirm => 'Are you sure?', :method => :delete, :remote => true %>

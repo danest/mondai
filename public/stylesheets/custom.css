@@ -718,6 +718,10 @@ label{
 	margin-top:-30px;
 	margin-right:-40px;
 }
+
+p.change_response{
+  text-align:right;
+}
 .social{
 	width: 150px;
 	height: 22px;
