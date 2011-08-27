@@ -10,7 +10,8 @@
 			</div>
 			<div class="question_content">
 				<%= link_to question.content, show_question_path(question.normalized_name, question) %><br />
-				<%= question.description %>
+        <%= question.description %>
+        <%= question.answers.length %>
 			</div>
 		</div><div class="clear"></div>	
 	<% end %>
