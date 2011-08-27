@@ -10,7 +10,11 @@
 			</div>
 			<div class="question_content">
 				<%= link_to question.content, show_question_path(question.normalized_name, question) %><br />
-        <%= question.description %>
+        <% if question.description.empty? %>
+          <br />
+        <% else %>
+          <%= question.description %>
+        <% end %>
         <p>
         Asked by: <%= question.user.name %> | <%= question.answers.length %> responses
         </p>
