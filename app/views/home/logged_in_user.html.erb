@@ -12,7 +12,7 @@
 				<%= link_to question.content, show_question_path(question.normalized_name, question) %><br />
         <%= question.description %>
         <p>
-        Asked by: <%= question.user %> | <%= question.answers.length %> responses
+        Asked by: <%= question.user.name %> | <%= question.answers.length %> responses
         </p>
       </div>
 		</div><div class="clear"></div>	
