@@ -11,8 +11,10 @@
 			<div class="question_content">
 				<%= link_to question.content, show_question_path(question.normalized_name, question) %><br />
         <%= question.description %>
-        <%= question.answers.length %>
-			</div>
+        <p>
+          Ansers: <%= question.answers.length %>
+        </p>
+      </div>
 		</div><div class="clear"></div>	
 	<% end %>
 	<div id="attach">
