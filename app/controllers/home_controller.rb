@@ -14,6 +14,12 @@ class HomeController < ApplicationController
     end
   end
 
+  def yc
+    @questions = Question.page(params[:page]).per(10)
+    @topics = Topic.all  
+    render :action => 'logged_in_user'
+  end
+
   def show
     #@questions = Question.all
     redirect_to root_path  
