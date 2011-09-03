@@ -71,7 +71,7 @@
 	</div>
 </div>
 <div class="clear"></div>
-	<% if current_user %>
+	<% if current_user || current_page?(/yc)%>
   		<div class="container">
 	<% else %>
 		<div class="mainpage">
