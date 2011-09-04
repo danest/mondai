@@ -503,6 +503,28 @@ div.question_image{
 	font: 14px/18px normal garamond, sans-serif;
 }
 
+p.change_response a{
+  padding: 4px 10px 3px 20px;
+  border-radius: 6px;
+  color:#555;
+}
+a.edit{
+  background:url('../images/edit-icon.png') left no-repeat;
+}
+a.delete{
+  background:url('../images/delete-icon.png') left no-repeat;
+
+}
+a:hover.edit{
+  background-color:#E5EECC;
+  color:#393;
+}
+
+a:hover.delete{
+  color:#980905;
+  background-color:#FF9494;
+}
+
 #answers_container{
 	margin-top:5px;
 }
