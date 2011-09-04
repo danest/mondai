@@ -159,9 +159,13 @@ button {  width: auto; overflow: visible; }
 
 body, select, input, textarea {
   /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
-  color: #444;
+  color: #555;
+  background:#F0F0F0 url('../images/tile.gif') repeat-y;
   /* Set your base font here, to apply evenly */
   /* font-family: Georgia, serif;  */
+}
+textarea{
+  background:#fff;
 }
 
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
@@ -515,6 +519,11 @@ div.question_image{
 	margin-left:10px;
 	margin-top:5px;
 	float:left;
+}
+
+.user_path a{
+  text-decoration:none;
+  font-weight:bold;
 }
 .user img{
 	float:left;

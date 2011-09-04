@@ -2,8 +2,8 @@
 	<div class="user">
 		<%= image_tag answer.user.picture, :size => "25x25" %>
 	</div>
-	<p class="user_name">
-		<%= answer.user.name %>
+	<p class="user_name user_path">
+		<%= link_to answer.user.name, show_user_path(answer.user.name, answer.user.id) %>
 	</p>
 	<div class="single_answer">
 		<%= raw sanitize(auto_link(simple_format(answer.content, :class=> 'psafeanswer'), :tags => %w(strong em b i hr br ul ol li blockquote p) )) %>
