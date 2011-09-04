@@ -526,6 +526,7 @@ ul.question_topics li {
 	background-color: #dddedf;
 	color: #7a7b7c;
 	padding: 4px;
+  border: 1px solid #CCC;
 
 	-webkit-border-radius: 6px;
 	-khtml-border-radius: 6px;
@@ -1046,7 +1047,7 @@ div.socialshare {
 }
 
 #boxtopics {
-	padding-left: 10px;
+	padding-left: 0px;
 }
 
 .all_topics {
@@ -1056,26 +1057,37 @@ div.socialshare {
 .all_topics li {
 	list-style: none;
 	margin-bottom: 2px;
+  float: left;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1;
+  background-color: #DDDEDF;
+  margin: 0 6px 6px 0;
+  padding: 3px 6px 4px 6px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 5px;
+  border-radius: 4px;
+  border: 1px solid #CCC;  
+  
 }
 
 .all_topics li:hover {
 	background-color: #DDDEDF;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: #BBBBBB;
 
-	-webkit-border-radius: 10px;
-	-khtml-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
 }
 
 .all_topics li a {
 	font-size: 1.1em;
-	padding: 3px 6px;
 	display: block;
-	color: #999;
+	color: #555;
+  text-decoration:none;
 }
 
 .all_topics li a:hover {
-	color: #666666;
+ color: #666666;
+  
 }
 
 /* Navigation */
