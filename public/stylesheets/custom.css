@@ -159,7 +159,7 @@ button {  width: auto; overflow: visible; }
 
 body, select, input, textarea {
   /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
-  color: #555;
+  color: #333;
   background:#F0F0F0 url('../images/tile.gif') repeat-y;
   /* Set your base font here, to apply evenly */
   /* font-family: Georgia, serif;  */
@@ -458,8 +458,8 @@ div.question_image{
 	color:#4c7cb3;
 	text-decoration:underline;
 }
-.topic_container, #answer_box{
-	
+.asked{
+  color:#555;
 }
 
 #answer_box{
