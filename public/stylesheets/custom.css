@@ -198,6 +198,7 @@ h2 {
 
 #topbar{
 	height:40px;
+  background:url('../images/bg-noise.png') repeat-x;
 	background-color:#19559b;
 	position: fixed;
 	top: 0;
