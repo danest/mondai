@@ -1047,7 +1047,9 @@ div.socialshare {
 }
 
 #boxtopics {
-	padding-left: 0px;
+	padding-left: 20px;
+  margin-bottom:2px;
+  background: url('../images/topics-icon.png') left no-repeat;
 }
 
 .all_topics {
