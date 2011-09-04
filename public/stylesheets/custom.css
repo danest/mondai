@@ -503,7 +503,7 @@ div.question_image{
 	font: 14px/18px normal garamond, sans-serif;
 }
 
-p.change_response a{
+a.edit, a.delete{
   padding: 4px 10px 3px 20px;
   border-radius: 6px;
   color:#555;
