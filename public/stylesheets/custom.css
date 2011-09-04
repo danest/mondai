@@ -522,33 +522,33 @@ ul.question_topics {
 }
 
 ul.question_topics li {
-	display: inline;
-	background-color: #dddedf;
-	color: #7a7b7c;
-	padding: 4px;
-  border: 1px solid #CCC;
-
-	-webkit-border-radius: 6px;
-	-khtml-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-
-	margin: 3px;
-	text-align: center;
-	line-height: 2em;
+	list-style: none;
+  float: left;
+  font-size: 11px;
+  line-height: 1;
+  background-color: #DDDEDF;
+  margin: 5px 6px 1px 0px;
+  padding: 3px 6px 4px 6px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 5px;
+  border-radius: 4px;
+  border: 1px solid #CCC;  
 }
 
 ul.question_topics li a {
 	display: inline;
-	background-color: #dddedf;
 	color: #7a7b7c;
 	padding: 4px;
 	text-align: center;
 	text-decoration: none;
 }
 
+ul.question_topics li:hover{
+  background-color: #DDDEDF;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: #BBBBBB;
+}
 ul.question_topics li a:hover {
-	color: #575758;
 	text-decoration: underline;
 }
 
