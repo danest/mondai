@@ -1226,6 +1226,18 @@ nav.pagination {
 	background-color: white;
 }
 
+/** tip trigger for voting **/
+.tip_up, .tip_down {
+    color: #fff;
+    background:#1d1d1d;
+    display:none; /*--Hides by default--*/
+    padding:10px;
+    position:absolute;    z-index:1000;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
 /**
  * Non-semantic helper classes: please define your styles before this section.
  */

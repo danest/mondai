@@ -122,5 +122,4 @@ class AnswersController < ApplicationController
       @answer = Answer.find(params[:id])
       redirect_to root_path unless current_user?(@answer.user)
     end
-  
 end

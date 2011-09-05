@@ -48,14 +48,14 @@
 		</div><div class="clear"></div>
 	
 		<div id="answer">
-			<h2>Answers:</h2>
+      <h2>Answers:</h2>
+        <span class="tip_up">Click here to vote up</span> 
+        <span class="tip_down">Click here to vote down</span><br />
 			<div id="answers_container">
-				<div id="something">
 					<% @question.answers.each do |answer| %>
 						<%= render :partial => answer %>
 					<% end %>
-				</div>
-			</div>
+        </div>
 		</div>
 		<div id="answer_box">
 			<h4>Your Answer:</h4>

@@ -2,6 +2,45 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $(document).ready(function() {
+
+  retrigger = function() {
+    //Tooltips
+    var tip;
+    $(".tip_trigger").hover(function(){
+        if($(this).parent().hasClass("vote_up")){
+          tip = $("#answer").find('.tip_up').eq(0);       
+        } else {
+          tip = $("#answer").find('.tip_down').eq(0);        
+        }
+		    tip.fadeIn('fast'); //Show tooltip
+        console.log('here');
+        console.log(tip); 
+    }, function() {
+        tip.hide(); //Hide and remove tooltip appended to the body
+        
+    }).mousemove(function(e) {
+        var mousex = e.pageX + 20; //Get X coodrinates
+        var mousey = e.pageY + 20; //Get Y coordinates
+        var tipWidth = tip.width(); //Find width of tooltip
+        var tipHeight = tip.height(); //Find height of tooltip
+
+        //Distance of element from the right edge of viewport
+        var tipVisX = $(window).width() - (mousex + tipWidth);
+        //Distance of element from the bottom of viewport
+        var tipVisY = $(window).height() - (mousey + tipHeight);
+
+        if ( tipVisX < 20 ) { //If tooltip exceeds the X coordinate of viewport
+            mousex = e.pageX - tipWidth - 20;
+        } if ( tipVisY < 20 ) { //If tooltip exceeds the Y coordinate of viewport
+            mousey = e.pageY - tipHeight - 20;
+        }
+        //Absolute position the tooltip according to mouse position
+        tip.css({  top: mousey, left: mousex });
+    });
+
+  }
+  retrigger();
+  
 	var randomnumber=Math.floor(Math.random()*6)
 
 	switch(randomnumber)
