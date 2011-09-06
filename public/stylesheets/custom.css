@@ -495,9 +495,9 @@ ul#toplinks {
 }
 
 ul#topnav li {
-	margin-right: 15px;
+	margin-right: 9px;
 	float: left;
-	margin-top: 3px;
+	margin-top: 5px;
 }
 
 ul#toplinks li {
@@ -717,11 +717,12 @@ a:hover.delete {
 .search {
 	height: 30px;
 	color: black;
-	text-shadow: rgba(0,0,0,.2) 0 0 5px;
+  font-size:13px;
+  font-weight:bold;
 }
 
 input[type="text"].searchBox {
-	height: 25px;
+	height: 22px;
 	width: 300px;
 }
 
@@ -958,10 +959,11 @@ a.logo {
 	height: 40px;
 	background-position: 0px 0px;
 	background: url('../images/mondai-logo.png') no-repeat;
+  margin-top: 3px;
 }
 
 a:hover.logo {
-	height: 40px;
+	height: 37px;
 	background-color: rgba(25,20,0,0.5);
 	background-position: 0px 0px;
 }
@@ -1265,6 +1267,14 @@ nav.pagination {
   right:60px;
   text-align:center;
 }
+
+/** custom button fonts **/
+
+a.add, button.comment{
+  font-weight:bold;
+  font-size:13px;
+}
+
 
 /**
  * Non-semantic helper classes: please define your styles before this section.
