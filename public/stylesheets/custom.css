@@ -1238,6 +1238,34 @@ nav.pagination {
     border-radius: 3px;
 }
 
+.flash, #flash_notice {
+	z-index: 			9999;
+	color: 				#fff;
+	font-size: 			12px;
+	background-color: 		#000;
+  position:			absolute;
+	opacity: 				.85;
+	-ms-filter: 			"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)"; 
+	filter: 				progid:DXImageTransform.Microsoft.Alpha(Opacity=85); 
+	zoom: 					1;
+	width: 					235px;
+	padding: 				10px;
+	margin-top: 			5px;
+	margin-bottom: 			5px;
+	font-family: 			Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 				1em;
+	text-align: 			left;
+	display: 				block;
+	-moz-border-radius: 	5px;
+	-webkit-border-radius:	5px;
+	-webkit-border-radius:	5px;
+  min-height: 			40px;  
+  margin: 				10px;
+  top:60px;
+  right:60px;
+  text-align:center;
+}
+
 /**
  * Non-semantic helper classes: please define your styles before this section.
  */

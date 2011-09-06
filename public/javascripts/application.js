@@ -147,4 +147,13 @@ $(document).ready(function() {
 				return false;
 			}
 		});
+
+      positionFlash = function(){
+        var $flash = $("#flash_notice");
+        $flash.css("position","absolute");
+        $flash.css("top", ( 40 + $(window).scrollTop()) + "px");
+        $flash.css("right", ( 60 + $(window).scrollLeft()) + "px");
+      }
+
+   // console.log($(document).scrollTop())
 });
