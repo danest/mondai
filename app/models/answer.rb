@@ -8,7 +8,7 @@ class Answer < ActiveRecord::Base
     self.votes.sum(:value)
   end
 
-  #validates :content, :presence => true
+  validates :content, :presence => true
   #default_scope :include => :votes
   default_scope :order => 'count DESC'
 end

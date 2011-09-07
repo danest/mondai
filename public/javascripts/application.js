@@ -156,9 +156,15 @@ $(document).ready(function() {
       }
 
     $(document).bind("ajax:error", function(event, data, status, xhr) {
-      $("#flashes").html('<div class="flash notice" id="flash_notice"> Please Log in to Answer or Vote. </div>');
+      if(data.status === 500){
+          $("#flashes").html('<div class="flash notice" id="flash_notice"> Error - Please input a valid entry</div>');        
+          
+      } else{
+          $("#flashes").html('<div class="flash notice" id="flash_notice"> Please Log in to Answer or Vote. </div>');
+      }
       positionFlash();
       $('#flash_notice').delay(3000).fadeOut('slow');
+
     });
 
 
