@@ -155,5 +155,13 @@ $(document).ready(function() {
         $flash.css("right", ( 60 + $(window).scrollLeft()) + "px");
       }
 
+    $("form").bind("ajax:error", function(event, data, status, xhr) {
+      $("#flashes").html('<div class="flash notice" id="flash_notice"> Please Log in to Answer or Vote. </div>');
+      positionFlash();
+      $('#flash_notice').delay(3000).fadeOut('slow');
+    });
+
+
+
    // console.log($(document).scrollTop())
 });
