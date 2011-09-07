@@ -1,7 +1,7 @@
 Mondai::Application.routes.draw do
   #get "home/index"
   get "home/show"
-  match "/yc" => "home#yc"
+  match "/public" => "home#public"
 
   match 'questions/page/:page' => "questions#show_more"
   match '/search/' => 'home#search', :as => "search"

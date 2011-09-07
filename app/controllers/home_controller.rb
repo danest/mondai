@@ -14,7 +14,7 @@ class HomeController < ApplicationController
     end
   end
 
-  def yc
+  def public
     @questions = Question.page(params[:page]).per(10)
     @topics = Topic.all  
     render :action => 'logged_in_user'
