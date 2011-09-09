@@ -1302,6 +1302,32 @@ a.add, button.comment{
   font-size:13px;
 }
 
+/** add the button for the css3 **/
+	.awesome, .awesome:visited {
+    background: #222 url(/images/alert-overlay.png) repeat-x; 
+    display: inline-block; 
+    padding: 4px 9px 6px 8px;
+    margin-left:10px;
+    color: #fff; 
+    text-decoration: none;
+    -moz-border-radius: 2px; 
+    -webkit-border-radius: 2px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    position: relative;
+    cursor: pointer;
+		font-weight: bold;
+		width:130px;
+		height:12px;
+	}
+
+.awesome:hover                          { background-color: #111; color: #fff; }
+.awesome:active                         { top: 1px; }
+.small.awesome, .small.awesome:visited          { font-size: 12px; padding-top:4px!important; }
+.blue.awesome, .blue.awesome:visited        { background-color: #2daebf; }
+.blue.awesome:hover                         { background-color: #007d9a; }
 
 /**
  * Non-semantic helper classes: please define your styles before this section.

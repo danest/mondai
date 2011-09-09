@@ -17,6 +17,7 @@ class AnswersController < ApplicationController
       if @answer.save
         format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
         format.js
+        CommentMailer.comment_notify(@question).deliver        
       else
         render 'new'
       end
