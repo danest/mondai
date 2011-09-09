@@ -4,6 +4,7 @@ class AnswersController < ApplicationController
   
   # Need to discuss before us to implement these 2 funcs
   before_filter :authenticate_user!
+
   def new
     @answer = Answer.new  
   end
@@ -17,7 +18,7 @@ class AnswersController < ApplicationController
       if @answer.save
         format.html { redirect_to show_question_path(@answer.question.normalized_name,@answer.question) }
         format.js
-        CommentMailer.comment_notify(@question).deliver        
+        send_mail(@question)
       else
         render 'new'
       end
@@ -122,5 +123,9 @@ class AnswersController < ApplicationController
     def authorized_user
       @answer = Answer.find(params[:id])
       redirect_to root_path unless current_user?(@answer.user)
+    end
+
+    def send_mail(question)
+        CommentMailer.comment_notify(question).deliver      
     end
 end
