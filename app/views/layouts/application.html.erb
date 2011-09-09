@@ -42,7 +42,7 @@
 					<%= button_link_to "Log Out", destroy_user_session_path %>		
 				<% end %>
 			</ul>
-			<% else %>
+		<% else %>
 				<ul id="topnavmore">
 					<li id="learnmore"><%= link_to "Learn More", about_path %></li>
 				</ul>
@@ -50,7 +50,8 @@
 				<div class="socialsharenav">
 					<ul id="socialshare">
 						<li>
-							<div id="fb-root"></div><fb:like href="" send="true" layout="button_count" width="100" show_faces="false" font="lucida grande"></fb:like>
+							<div id="fb-root"></div>
+							<fb:like href="" send="true" layout="button_count" width="100" show_faces="false" font="lucida grande"></fb:like>
 						</li>
 						<li class="gplus">
 							<g:plusone size="medium"></g:plusone>	
@@ -65,7 +66,7 @@
 						<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class=> "ir social" %>
 					</li>
 					<li id="return">
-						Returning User? Sign in.
+						Returning User?
 					</li>
 				</ul>
 		<% end %>

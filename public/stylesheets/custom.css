@@ -491,7 +491,7 @@ ul#toplinks {
 	list-style: none;
 	display: inline;
 	float: right;
-	margin-top: 7px;
+	margin-top: 10px;
 }
 
 ul#topnav li {
@@ -797,6 +797,7 @@ label {
 	border-bottom: 1px solid #222;
 	position: relative;
 	cursor: pointer;
+	margin-top:3px;
 }
 
 #learnmore a:hover {
@@ -841,10 +842,10 @@ label {
 }
 
 #middleAbout {
-	width: 450px;
-	height: 200px;
-	left: 51.75%;
-	margin: -200px 0 0 -250px;
+	width: 550px;
+	height: 220px;
+	left: 50%;
+	margin: -150px 0 0 -250px;
 	padding: 30px 10px 0;
 	top: 50%;
 	z-index: 99;
@@ -885,26 +886,30 @@ label {
 }
 
 #footersignin {
-	padding: 5px 10px 10px 10px;
-	width: 350px;
-	float: left;
+	padding: 5px 10px 10px 0px;
+	width: 370px;
+	float: center;
 	color: white;
 	text-align: center;
 	font: helvetica;
+	margin-left: none;
 }
 
 #footersignin h2 {
 	font-size: 14px;
 }
+#footersignin small {
+	font-size: 9px;
+	margin-bottom: 5px;
+}
 
 #footersignin a {
-	margin-top: 5px;
-	margin-left: 100px;
+	padding-top:2px;
 	text-align: center;
 }
 
 #footerbottom {
-	width: 370px;
+	width: 400px;
 	margin: 0 auto;
 }
 
@@ -972,7 +977,8 @@ p.change_response {
 .social {
 	width: 150px;
 	height: 22px;
-	background-position: 0px 0px;
+	display:inline-block!important;
+	background-position: 0 0;
 	background: url('../images/signin_facebook.png') no-repeat;
 }
 
@@ -1027,7 +1033,7 @@ div.socialshare {
 .socialsharenav {
 	width: 350px;
 	float: left;
-	margin-top: 8px;
+	margin-top: 10px;
 }
 
 #topnavmore {
