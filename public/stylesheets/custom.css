@@ -932,11 +932,6 @@ label {
 
 .vote_up img:hover, .vote_down img:hover {
 	background-color: #7A7B7C;
-
-	-webkit-border-radius: 6px;
-	-khtml-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
 }
 
 .vote_count {
