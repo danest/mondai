@@ -73,7 +73,7 @@
 	</div>
 </div>
 <div class="clear"></div>
-<% if current_user || current_page?('/public') || (request.url.include? "topic") %>
+<% if current_user || current_page?('/public') || (request.url.include? "topic") || (request.url.include? "/u/") %>
   	<div class="container">
 <% else %>
 		<div class="mainpage">

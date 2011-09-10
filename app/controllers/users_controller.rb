@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   end
   
   def show
-    user = User.find(params[:id])
-    @user_questions = user.questions
+    @user = User.find(params[:id])
+    @user_questions = @user.questions
     @topics = Topic.all
   end
   
