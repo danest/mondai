@@ -3,7 +3,7 @@
 		<%= add_button_link_to "Ask A Question" , new_question_path %>
 	</div>
 	<h1>Share what you know. Answer new questions.</h1>
-	<% cache(@questions.each) do |question| %>
+	<% cache(@questions).each do |question| %>
 		<div class="question">
 			<div class="question_image">
 				<%= image_tag question.user.picture %>
