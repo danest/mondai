@@ -17,8 +17,7 @@ Mondai::Application.configure do
 
   #cache store setup
   config.action_controller.perform_caching = true
-  config.cache_store = :dalli_store, ENV['MEMCACHE_SERVERS']  # if using Dalli < 0.10.1 (comment added 10/26/10)
-
+  config.cache_store = :dalli_store
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
