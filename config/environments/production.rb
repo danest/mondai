@@ -16,8 +16,8 @@ Mondai::Application.configure do
   config.middleware.use "WwwMiddleware"
 
   #cache store setup
-  config.action_controller.perform_caching = true
   config.cache_store = :dalli_store
+
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
