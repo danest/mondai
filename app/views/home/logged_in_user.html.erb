@@ -3,7 +3,8 @@
 		<%= add_button_link_to "Ask A Question" , new_question_path %>
 	</div>
 	<h1>Share what you know. Answer new questions.</h1>
-	<% cache(@questions).each do |question| %>
+	<%= render :partial => "question", :collection => @questions %>
+	<!-- <% @questions.each do |question| %>
 		<div class="question">
 			<div class="question_image">
 				<%= image_tag question.user.picture %>
@@ -19,8 +20,8 @@
         Asked by: <%= question.user.name %> | <%= question.answers.length %> responses
         </p>
       </div>
-		</div><div class="clear"></div>	
-	<% end %>
+	  </div><div class="clear"></div>	
+	<% end %> -->
 	<div id="attach">
 	</div>
 </div>
