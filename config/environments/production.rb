@@ -15,6 +15,9 @@ Mondai::Application.configure do
   #middle ware for www redirect
   config.middleware.use "WwwMiddleware"
 
+  #cache store setup
+  config.cache_store = :dalli_store
+
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
