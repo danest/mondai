@@ -266,7 +266,7 @@ body, select, input, textarea {
 	/* font-family: Georgia, serif;  */
 }
 
-textarea {
+textarea, input, select {
 	background: #fff;
 }
 
