@@ -167,6 +167,12 @@ $(document).ready(function() {
 
     });
 
+    $(document).bind("ajax:before", function(event, data, status, xhr){
+        $("#flashes").html('<div class="flash notice" id="flash_notice"> Submitting</div>');  
+        positionFlash();
+        $('#flash_notice').delay(3000).fadeOut('slow');
+    });
+
 
 
    // console.log($(document).scrollTop())
